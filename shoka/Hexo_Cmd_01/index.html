@@ -1,0 +1,659 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shoka/images/apple.jpg">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/shoka/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="上杉九月的博客(Shoka)" href="https://sakurasep.site/shoka/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="上杉九月的博客(Shoka)" href="https://sakurasep.site/shoka/atom.xml" />
+<link rel="alternate" type="application/json" title="上杉九月的博客(Shoka)" href="https://sakurasep.site/shoka/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/shoka/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="零基础,Hexo,Cmd" />
+
+
+<link rel="canonical" href="https://sakurasep.site/shoka/Hexo_Cmd_01/">
+
+
+
+  <title>
+使用 Cmd 批处理命令同步主站更新 - Hexo 系列教程 |
+SakuraSep = 上杉九月的博客 (Shoka) = 探索未来</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">使用 Cmd 批处理命令同步主站更新
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-05-14 07:53:42">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-05-14T07:53:42+08:00">2021-05-14</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.8k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/shoka/" rel="start">SakuraSep</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://cdn.jsdelivr.net/gh/sakurasep/images_01@1.3/Cmd/headimg.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/shoka/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/shoka/categories/Hexo%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" itemprop="item" rel="index" title="分类于 Hexo 系列教程"><span itemprop="name">Hexo 系列教程</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://sakurasep.site/shoka/Hexo_Cmd_01/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/shoka/images/touxiang.jpg">
+    <meta itemprop="name" content="上杉九月">
+    <meta itemprop="description" content="探索未来, 这里是 Shoka 主题分站，访问主站点请删除网址中的 /shoka/">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="上杉九月的博客 (Shoka)">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="文章简介"><a class="anchor" href="#文章简介">#</a> 文章简介</h1>
+<blockquote>
+<p>作者：上杉九月<br />
+排版与发布：上杉九月</p>
+</blockquote>
+<h1 id="前言"><a class="anchor" href="#前言">#</a> 前言</h1>
+<p>Hexo 博客框架是静态部署的，它通过将文件编译到 <code>public</code>  文件夹，使用 Git 推送到远程仓库，实现博客网站显示。</p>
+<p>同时，我们依据这一原理，在 <code>主域名</code> 下开设分站，将以往所配置的主题部署在 <code>主域名/分站</code></p>
+<p>例如本站使用 Volantis 为主站点，将以往配置过的众多主题部署在分站网址，给博客增加了一些可玩性</p>
+<blockquote>
+<p>Volantis: <a href="https://sakurasep.site/">https://sakurasep.site/</a><br />
+Next: <a href="https://sakurasep.site/next">https://sakurasep.site/next</a><br />
+Shoka: <a href="https://sakurasep.site/shoka">https://sakurasep.site/shoka</a><br />
+Butterfly: <a href="https://sakurasep.site/butterfly">https://sakurasep.site/butterfly</a><br />
+Yun: <a href="https://sakurasep.site/yun">https://sakurasep.site/yun</a><br />
+Fluid: <a href="https://sakurasep.site/fluid">https://sakurasep.site/fluid</a><br />
+Matery: <a href="https://sakurasep.site/matery">https://sakurasep.site/matery</a></p>
+</blockquote>
+<p>但是，在 <code>Volantis</code>  目录下进行操作，分站内容是无法同步更新的，需要将在 <code>Volantis</code>  下写的文章复制到其他主题目录下，然后编译出 <code>public</code>  文件夹，复制文件夹内容到 <code>Volantis/theme/volantis/source/分站名称</code> ，最后统一编译部署。<br />
+这一过程还是稍微繁琐的。</p>
+<p>但是我们的操作大多是重复的，那么，为什么不使用批处理来代替人工操作呢？</p>
+<h1 id="正文"><a class="anchor" href="#正文">#</a> 正文</h1>
+<h3 id="涉及到的cmd命令"><a class="anchor" href="#涉及到的cmd命令">#</a> 涉及到的 Cmd 命令</h3>
+<ul>
+<li><code>盘符:</code>  例如  <code>G:</code>  使用此命令使 Cmd 定位到博客根目录所在硬盘分区</li>
+<li><code>cd 文件夹路径</code>  例如:  <code>cd G:\\Blog\\Volantis</code>  使用此命令使 Cmd 定位到博客文件夹目录</li>
+</ul>
+<blockquote>
+<p>注意，在使用 <code>cd G:\\Blog\\Volantis</code>  之前，必须使用 <code>G:</code> ，否则将不会定位到目标目录</p>
+</blockquote>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images_01@1.3/Cmd/1.jpg" alt="" /></p>
+<blockquote>
+<p>正确顺序</p>
+</blockquote>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images_01@1.3/Cmd/2.jpg" alt="" /></p>
+<ul>
+<li><code>rmdir /s /q 文件夹路径</code>  例如 <code>rmdir /s /q G:\\Blog\\Volantis</code>  使用此命令删除指定路径的文件夹 /s 删除目录树 /q 不会显示是否删除 XXX</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images_01@1.3/Cmd/4.jpg" alt="" /></p>
+<ul>
+<li><code>md 文件夹路径</code>  例如  <code>md G:\\Blog\\Volantis</code>  使用此命令新建指定路径的文件夹</li>
+<li><code>copy 文件或文件夹路径 新文件夹路径</code>  例如  <code>copt G:\\Blog\\Volantis G:\\Blog\\Butterfly</code>  使用此命令将指定文件或文件夹复制到新的位置</li>
+<li><code>xcopy 文件或文件夹路径 新文件夹路径</code>   <code>copy</code>  命令的扩展 支持 /s/q 等</li>
+</ul>
+<blockquote>
+<p>注意，如果你删除了 <code>G:\\Blog\\Volantis</code>  后想要复制文件到该路径，需要先使用 <code>md</code>  新建文件夹，否则会报错</p>
+</blockquote>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images_01@1.3/Cmd/3.jpg" alt="" /></p>
+<blockquote>
+<p>正确顺序</p>
+</blockquote>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images_01@1.3/Cmd/2.jpg" alt="" /></p>
+<ul>
+<li><code>pause</code>  使用此命令使 Cmd 在执行完命令后不会退出</li>
+</ul>
+<h3 id="cmd批处理源代码"><a class="anchor" href="#cmd批处理源代码">#</a> Cmd 批处理源代码</h3>
+<blockquote>
+<p>这里仅展示部署一个分站 Butterfly 的批处理代码</p>
+</blockquote>
+<h4 id="清除文章部署缓存"><a class="anchor" href="#清除文章部署缓存">#</a> 清除文章部署缓存</h4>
+<h5 id="模板"><a class="anchor" href="#模板">#</a> 模板</h5>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>盘符:</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">rmdir</span> /s /q 主站根目录<span class="token punctuation">\</span><span class="token punctuation">\</span>theme<span class="token punctuation">\</span><span class="token punctuation">\</span>主题<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>分站名称</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>copy 主站根目录<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>_posts<span class="token punctuation">\</span><span class="token punctuation">\</span> 分站根目录<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>_posts</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>pause</pre></td></tr></table></figure><h5 id="示例"><a class="anchor" href="#示例">#</a> 示例</h5>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>G:</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">rmdir</span> /s /q G:<span class="token punctuation">\</span><span class="token punctuation">\</span>Blog<span class="token punctuation">\</span><span class="token punctuation">\</span>Hexo_Personal<span class="token punctuation">\</span><span class="token punctuation">\</span>Stable<span class="token punctuation">\</span><span class="token punctuation">\</span>Main_Volantis<span class="token punctuation">\</span><span class="token punctuation">\</span>themes<span class="token punctuation">\</span><span class="token punctuation">\</span>volantis<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>butterfly</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>copy G:<span class="token punctuation">\</span><span class="token punctuation">\</span>Blog<span class="token punctuation">\</span><span class="token punctuation">\</span>Hexo_Personal<span class="token punctuation">\</span><span class="token punctuation">\</span>Stable<span class="token punctuation">\</span><span class="token punctuation">\</span>Main_Volantis<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>_posts<span class="token punctuation">\</span><span class="token punctuation">\</span> G:<span class="token punctuation">\</span><span class="token punctuation">\</span>Blog<span class="token punctuation">\</span><span class="token punctuation">\</span>Hexo_Personal<span class="token punctuation">\</span><span class="token punctuation">\</span>Dev<span class="token punctuation">\</span><span class="token punctuation">\</span>Dev_Butterfly<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>_posts</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>pause</pre></td></tr></table></figure><h4 id="一键部署文章"><a class="anchor" href="#一键部署文章">#</a> 一键部署文章</h4>
+<h5 id="模板-2"><a class="anchor" href="#模板-2">#</a> 模板</h5>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>盘符:</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token builtin class-name">cd</span> 分站根目录</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>hexo clean</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>hexo g</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>md 主站根目录<span class="token punctuation">\</span><span class="token punctuation">\</span>theme<span class="token punctuation">\</span><span class="token punctuation">\</span>主题<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>分站名称</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre>xcopy /s /q 分站根目录<span class="token punctuation">\</span><span class="token punctuation">\</span>public<span class="token punctuation">\</span><span class="token punctuation">\</span> 主站根目录<span class="token punctuation">\</span><span class="token punctuation">\</span>theme<span class="token punctuation">\</span><span class="token punctuation">\</span>主题<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>分站名称</pre></td></tr></table></figure><h5 id="示例-2"><a class="anchor" href="#示例-2">#</a> 示例</h5>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>G:</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token builtin class-name">cd</span> G:<span class="token punctuation">\</span><span class="token punctuation">\</span>Blog<span class="token punctuation">\</span><span class="token punctuation">\</span>Hexo_Personal<span class="token punctuation">\</span><span class="token punctuation">\</span>Dev<span class="token punctuation">\</span><span class="token punctuation">\</span>Dev_Butterfly</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>hexo clean</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>hexo g</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>md G:<span class="token punctuation">\</span><span class="token punctuation">\</span>Blog<span class="token punctuation">\</span><span class="token punctuation">\</span>Hexo_Personal<span class="token punctuation">\</span><span class="token punctuation">\</span>Stable<span class="token punctuation">\</span><span class="token punctuation">\</span>Main_Volantis<span class="token punctuation">\</span><span class="token punctuation">\</span>themes<span class="token punctuation">\</span><span class="token punctuation">\</span>volantis<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>butterfly</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre>xcopy /s /q G:<span class="token punctuation">\</span><span class="token punctuation">\</span>Blog<span class="token punctuation">\</span><span class="token punctuation">\</span>Hexo_Personal<span class="token punctuation">\</span><span class="token punctuation">\</span>Dev<span class="token punctuation">\</span><span class="token punctuation">\</span>Dev_Butterfly<span class="token punctuation">\</span><span class="token punctuation">\</span>public<span class="token punctuation">\</span><span class="token punctuation">\</span> G:<span class="token punctuation">\</span><span class="token punctuation">\</span>Blog<span class="token punctuation">\</span><span class="token punctuation">\</span>Hexo_Personal<span class="token punctuation">\</span><span class="token punctuation">\</span>Stable<span class="token punctuation">\</span><span class="token punctuation">\</span>Main_Volantis<span class="token punctuation">\</span><span class="token punctuation">\</span>themes<span class="token punctuation">\</span><span class="token punctuation">\</span>volantis<span class="token punctuation">\</span><span class="token punctuation">\</span>source<span class="token punctuation">\</span><span class="token punctuation">\</span>butterfly</pre></td></tr></table></figure><hr />
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/basic/chevereto/about_me.png" alt="about_me" /></p>
+
+      <div class="tags">
+          <a href="/shoka/tags/%E9%9B%B6%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> 零基础</a>
+          <a href="/shoka/tags/Hexo/" rel="tag"><i class="ic i-tag"></i> Hexo</a>
+          <a href="/shoka/tags/Cmd/" rel="tag"><i class="ic i-tag"></i> Cmd</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-05-14 09:49:55" itemprop="dateModified" datetime="2021-05-14T09:49:55+08:00">2021-05-14</time>
+  </span>
+  <span id="Hexo_Cmd_01/" class="item leancloud_visitors" data-flag-title="使用 Cmd 批处理命令同步主站更新" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/shoka/images/wechat.png" alt="上杉九月 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/shoka/images/alipay.jpg" alt="上杉九月 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>上杉九月 <i class="ic i-at"><em>@</em></i>上杉九月的博客 (Shoka)
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://sakurasep.site/shoka/Hexo_Cmd_01/" title="使用 Cmd 批处理命令同步主站更新">https://sakurasep.site/shoka/Hexo_Cmd_01/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/shoka/Study_C_01/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;sakurasep&#x2F;wallpaper_one@1.0&#x2F;wallpaper&#x2F;030.jpg" title="程序开发实训课后题目解析_第1期">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 学习笔记</span>
+  <h3>程序开发实训课后题目解析_第1期</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text"> 文章简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">3.</span> <span class="toc-text"> 正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84cmd%E5%91%BD%E4%BB%A4"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 涉及到的 Cmd 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cmd%E6%89%B9%E5%A4%84%E7%90%86%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="toc-number">3.0.2.</span> <span class="toc-text"> Cmd 批处理源代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%96%87%E7%AB%A0%E9%83%A8%E7%BD%B2%E7%BC%93%E5%AD%98"><span class="toc-number">3.0.2.1.</span> <span class="toc-text"> 清除文章部署缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-number">3.0.2.1.1.</span> <span class="toc-text"> 模板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.0.2.1.2.</span> <span class="toc-text"> 示例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%96%87%E7%AB%A0"><span class="toc-number">3.0.2.2.</span> <span class="toc-text"> 一键部署文章</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF-2"><span class="toc-number">3.0.2.2.1.</span> <span class="toc-text"> 模板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-number">3.0.2.2.2.</span> <span class="toc-text"> 示例</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/shoka/Hexo_Cmd_01/" rel="bookmark" title="使用Cmd批处理命令同步主站更新">使用Cmd批处理命令同步主站更新</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="上杉九月"
+      data-src="/shoka/images/touxiang.jpg">
+  <p class="name" itemprop="name">上杉九月</p>
+  <div class="description" itemprop="description">这里是 Shoka 主题分站，访问主站点请删除网址中的 /shoka/</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/shoka/archives/">
+        <span class="count">14</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/shoka/categories/">
+        <span class="count">8</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/shoka/tags/">
+        <span class="count">22</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Nha3VyYXNlcA==" title="https:&#x2F;&#x2F;github.com&#x2F;sakurasep"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9zaGFuZy1zaGFuLWppdS15dWUtMTY=" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shang-shan-jiu-yue-16"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTMwODQ1NTc4MA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;308455780"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vbW9vbmp6Nzk3" title="https:&#x2F;&#x2F;weibo.com&#x2F;moonjz797"><i class="ic i-weibo"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNha3VyYXNlcEBxcS5jb20=" title="mailto:sakurasep@qq.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/shoka/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-edge"></i>分站</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="https://sakurasep.site/next" rel="section"><i class="ic i-centos"></i>Next</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="https://sakurasep.site/matery/" rel="section"><i class="ic i-fedora"></i>Matery</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="https://sakurasep.site/butterfly/" rel="section"><i class="ic i-redhat"></i>Butterfly</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="https://sakurasep.site/fluid/" rel="section"><i class="ic i-ubuntu"></i>Fluid</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="https://sakurasep.site/volantis/" rel="section"><i class="ic i-suse"></i>Volantis</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="https://sakurasep.site/yun/" rel="section"><i class="ic i-th"></i>Yun</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/shoka/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/shoka/archives/" rel="section"><i class="ic i-list-alt"></i>时间线</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/shoka/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/shoka/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-star"></i>更多</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/shoka/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/shoka/links/" rel="section"><i class="ic i-magic"></i>网站</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/AboutWeb/" title="分类于 网站公告">网站公告</a>
+</div>
+
+    <span><a href="/shoka/AboutWeb/" title="网站公告">网站公告</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/Study/" title="分类于 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/shoka/Study_C_Luogu/" title="《洛谷刷题日记》">《洛谷刷题日记》</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/Basic/" title="分类于 零基础教程">零基础教程</a>
+</div>
+
+    <span><a href="/shoka/Basic_01_qfnuauto/" title="《零基础教程》云服务器实现定时签到_第1期">《零基础教程》云服务器实现定时签到_第1期</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/Study/" title="分类于 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/shoka/Study_01_Prime/" title="《算法学习笔记》质数筛选法_第1期">《算法学习笔记》质数筛选法_第1期</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/Study/" title="分类于 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/shoka/Study_Html_01/" title="《Html5学习笔记》HTML5拓展练习_第1期">《Html5学习笔记》HTML5拓展练习_第1期</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" title="分类于 年度总结">年度总结</a>
+</div>
+
+    <span><a href="/shoka/Year_2020/" title="《年度总结》2020">《年度总结》2020</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/Software/" title="分类于 应用使用指南">应用使用指南</a>
+</div>
+
+    <span><a href="/shoka/Software_01_Redirectstorage/" title="《应用使用指南》存储空间隔离_第1期">《应用使用指南》存储空间隔离_第1期</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/%E4%BA%91%E8%AF%84%E6%B5%8B/" title="分类于 云评测">云评测</a>
+</div>
+
+    <span><a href="/shoka/Redmi_Note9_Pro/" title="《云评测》一年磨一剑 Redmi Note 9 Pro_第1期">《云评测》一年磨一剑 Redmi Note 9 Pro_第1期</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/Basic/" title="分类于 零基础教程">零基础教程</a>
+</div>
+
+    <span><a href="/shoka/Basic_02_Chevereto/" title="《零基础教程》Chevereto-年轻人的第一个私人图床_第2期">《零基础教程》Chevereto-年轻人的第一个私人图床_第2期</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/shoka/categories/Study/" title="分类于 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/shoka/Study_C_01/" title="程序开发实训课后题目解析_第1期">程序开发实训课后题目解析_第1期</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">上杉九月 @ SakuraSep</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">54k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">49 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'Hexo_Cmd_01/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/shoka/js/app.js?v=0.2.5"></script>
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

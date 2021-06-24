@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/important/20210418225941.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/important/20210418225941.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/important/20210418225941.png">
+  <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/important/20210418225941.png" color="#222">
+
+<link rel="stylesheet" href="/next/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sakurasep.site","root":"/next/","images":"/next/images","scheme":"Gemini","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="面向大众的性能评测工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《应用使用指南》Perfdog_第2期">
+<meta property="og:url" content="https://sakurasep.site/next/posts/34525/index.html">
+<meta property="og:site_name" content="上杉九月的博客(Next)">
+<meta property="og:description" content="面向大众的性能评测工具">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/5.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/3.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/4.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/6.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/7.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/8.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/9.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/10.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/11.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/12.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/13.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/14.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/15.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/16.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/17.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/18.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/19.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/20.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/21.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/22.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/23.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/24.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/25.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/26.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/27.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/28.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/29.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/30.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/31.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/32.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/SGPT.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/basic/chevereto/about_me.png">
+<meta property="article:published_time" content="2021-03-22T12:04:51.000Z">
+<meta property="article:modified_time" content="2021-05-10T13:39:10.641Z">
+<meta property="article:author" content="上杉九月">
+<meta property="article:tag" content="零基础">
+<meta property="article:tag" content="应用使用指南">
+<meta property="article:tag" content="PC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/1.png">
+
+
+<link rel="canonical" href="https://sakurasep.site/next/posts/34525/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>《应用使用指南》Perfdog_第2期 | 上杉九月的博客(Next)</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/next/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">上杉九月的博客(Next)</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">探索未来</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-主站"><a href="https://sakurasep.site/" rel="section"><i class="fa fa-home fa-fw"></i>主站</a></li>
+        <li class="menu-item menu-item-home"><a href="/next/" rel="section"><i class="fas fa-blog fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/next/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/next/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/next/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/next/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E7%AE%80%E4%BB%8B"><span class="nav-text">文章简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">基本介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="nav-text">软件测试环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C"><span class="nav-text">软件基本安装操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%95%B0%E6%8D%AE%E8%A7%A3%E9%87%8A%E4%B8%8E%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="nav-text">软件数据解释与详细使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PerfDog-Jank-%E8%AE%A1%E7%AE%97%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-text">PerfDog Jank 计算思路：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PerfDog-Jank%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">PerfDog Jank计算方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FPS"><span class="nav-text">FPS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU"><span class="nav-text">CPU</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memory"><span class="nav-text">Memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GPU"><span class="nav-text">GPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network"><span class="nav-text">Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Battery"><span class="nav-text">Battery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Energy-Usage"><span class="nav-text">Energy Usage</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="nav-text">云端页面功能介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B"><span class="nav-text">用例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-text">我的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%95%B0%E6%8D%AE"><span class="nav-text">任务数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE"><span class="nav-text">项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%95%B0%E6%8D%AE"><span class="nav-text">具体数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%EF%BC%88%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E8%8C%83%E5%9B%B4%E4%BF%AE%E6%94%B9%EF%BC%8C%E5%9B%BE%E6%A0%87%E6%9B%B2%E7%BA%BF%E6%98%BE%E7%A4%BA%EF%BC%89"><span class="nav-text">图表基本操作（数据统计范围修改，图标曲线显示）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8%E6%8B%96%E9%80%89%E6%93%8D%E4%BD%9C%EF%BC%88%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%80%E6%97%B6%E9%97%B4%E6%AE%B5%E7%9A%84%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="nav-text">图表拖选操作（查看某一时间段的测试数据）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%82%B9%E9%80%89%E6%9F%A5%E7%9C%8B%E5%8D%A1%E9%A1%BF%E5%85%B7%E4%BD%93%E5%9C%BA%E6%99%AF"><span class="nav-text">点选查看卡顿具体场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E6%B5%8B%E8%AF%95%E8%8C%83%E4%BE%8B%E5%AF%B9%E6%AF%94"><span class="nav-text">不同测试范例对比</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E6%B7%BB%E5%8A%A05%E6%9D%A1%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="nav-text">可以添加5条测试用例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94%E4%B8%8D%E5%90%8C%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="nav-text">对比不同的测试用例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="nav-text">写在最后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%84%E5%B9%B3%E5%8F%B0%E6%9B%B4%E6%96%B0%E8%AE%A1%E5%88%92"><span class="nav-text">各平台更新计划</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="上杉九月"
+      src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/important/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">上杉九月</p>
+  <div class="site-description" itemprop="description">这里是Next主题分站，访问主站点请删除网址中的/next/</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/next/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/next/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/next/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sakurasep" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sakurasep" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sakurasep@qq.com" title="E-Mail → mailto:sakurasep@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/moonjz797" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;moonjz797" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/632762501" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;632762501" rel="noopener" target="_blank"><i class="fas fa-play-circle fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://youngfog.cn/" title="https:&#x2F;&#x2F;youngfog.cn&#x2F;" rel="noopener" target="_blank">殃雾的个人博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sakurasep.top/" title="https:&#x2F;&#x2F;sakurasep.top&#x2F;" rel="noopener" target="_blank">上杉九月的图片站</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sakurasep.site/" title="https:&#x2F;&#x2F;sakurasep.site&#x2F;">上杉九月的博客（主站）</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sakurasep.club/" title="https:&#x2F;&#x2F;sakurasep.club&#x2F;" rel="noopener" target="_blank">Sakura_Team</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/sakurasep" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sakurasep.site/next/posts/34525/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/important/touxiang.jpg">
+      <meta itemprop="name" content="上杉九月">
+      <meta itemprop="description" content="这里是Next主题分站，访问主站点请删除网址中的/next/">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="上杉九月的博客(Next)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《应用使用指南》Perfdog_第2期
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-22 20:04:51" itemprop="dateCreated datePublished" datetime="2021-03-22T20:04:51+08:00">2021-03-22</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-10 21:39:10" itemprop="dateModified" datetime="2021-05-10T21:39:10+08:00">2021-05-10</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/%E5%BA%94%E7%94%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" itemprop="url" rel="index"><span itemprop="name">应用使用指南</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="文章简介"><a href="#文章简介" class="headerlink" title="文章简介"></a>文章简介</h1><blockquote>
+<p>作者：酷安@上杉九月</p>
+<p>头图设计：酷安@上杉九月</p>
+<p>排版及其发布：酷安@上杉九月</p>
+</blockquote>
+<blockquote>
+<p><strong>本文在2020-05-04进行第二次修改</strong></p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>当我们作为一位消费者购买电子产品时，我们获取第一手信息的方式大多是从各大视频平台的自媒体的首发测评。当我们拿到电子产品之后，如何对它的性能进行测试呢？</p>
+<p>有的朋友首先会想到娱乐兔，HappyMatser等跑分软件。毕竟跑分很直观，高就是强，低就是弱。但是当跑分论成为大众的标准，厂商便会想出各种各样的方法来获取更高的跑分。例如前几天被曝光的Realme GT跑分作弊，还有各大厂商的跑分白名单（MIUI检测到跑分软件运行，会将CPU锁在最高频率）。这样的测试只能算是极限性能，可是真正的去游戏里测试，散热设计的不同，调度优化的不同便会产生巨大的差距。</p>
+<p>很早之前我也对手里的电子产品进行测试，当时用的是GameBench，不过经常出问题，正版的价格更是无法接受。第二个使用的软件是快否，虽然偶尔会出现一些bug，但是使用体验还是很不错的。不过因为这软件最后一次更新时间是2019年6月，emmm，基本是凉凉了。</p>
+<p>去年的时候，把手里的米9换成了米10，因为听说865的性能与功耗都平衡的很好，便产生了测试的想法。这一款由腾讯旗下WeTest开发的软件Perfdog吸引了我。支持<code>Windows</code>，<code>Mac OS X</code>两个PC平台，可以对安卓和iOS设备进行测试。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="软件测试环境"><a href="#软件测试环境" class="headerlink" title="软件测试环境"></a>软件测试环境</h2><blockquote>
+<ol>
+<li>小米10 12G RAM MIUI12.5 21.3.12 官方包</li>
+<li>iPad 2020 第八代 A12 iPad OS 14</li>
+</ol>
+</blockquote>
+<h2 id="软件基本安装操作"><a href="#软件基本安装操作" class="headerlink" title="软件基本安装操作"></a>软件基本安装操作</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://perfdog.qq.com/">Perfdog官方网站</a></p>
+</blockquote>
+<p>在Perfdog的官网下载对应平台的软件压缩包后，将压缩包解压到电脑的目录中。</p>
+<p>在目录找到Perfdog.exe可执行文件，打开后显示登陆界面，这里可以注册账号或使用QQ扫码登陆。</p>
+<p><strong>软件登录界面</strong></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/1.png"></p>
+<p>登录后便会进入到软件的UI界面</p>
+<p><strong>软件界面</strong></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/2.png"></p>
+<p>此时便可以将你的测试设备与电脑进行链接。初始化之后，在左侧的两个选项中选择测试方式（无线or有线 无线可以测试电池相关内容，有线可以同步显示并记录手机画面）和测试应用（支持应用名称搜索）</p>
+<p><strong>选择模式和设备（Windows平台可以多开Perfdog并同时对多部设备测试）</strong></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/5.jpg"></p>
+<p>右下角的加号是添加和减少测试项目。勾选左边的对号便是对此项目进行测试，点击右边的方框选择是否在软件中显示该项目的数据。</p>
+<p><strong>安卓设备与iOS设备的测试项目稍有出入</strong></p>
+<p><strong>安卓设备</strong></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/3.jpg"></p>
+<p><strong>iOS设备</strong></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/4.jpg"></p>
+<p>选择好测试应用，调整好测试项目，拿起你的设备，准备开始吧。</p>
+<h2 id="软件数据解释与详细使用步骤"><a href="#软件数据解释与详细使用步骤" class="headerlink" title="软件数据解释与详细使用步骤"></a>软件数据解释与详细使用步骤</h2><p>建议有能力的朋友前往<a target="_blank" rel="noopener" href="https://bbs.perfdog.qq.com/article-detail.html?id=5">官网</a>去详细了解测试项目的具体作用。以下内容是我个人的解读，可能会有一些不准确的地方，还请多多指教。</p>
+<h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/6.jpg"></p>
+<ul>
+<li>平均帧率 - Avg(FPS)<br>这一个数据对应的是整个测试过程的平均帧率，可以粗略的反应游戏的流畅程度。</li>
+<li>卡顿次数/每10分钟 - Jank(/10min)</li>
+<li>严重卡顿次数/每10分钟 - BigJank(/10min)</li>
+</ul>
+<p>这里放出perfdog官方给出的计算思路和计算方式</p>
+<h4 id="PerfDog-Jank-计算思路："><a href="#PerfDog-Jank-计算思路：" class="headerlink" title="PerfDog Jank 计算思路："></a>PerfDog Jank 计算思路：</h4><blockquote>
+<p>考虑视觉惯性，假设以前三帧的平均帧耗时为参考，作为vsync时间间隔，连续两次vsync没有新渲染画面刷新，则认为是一次潜在卡顿，也就是说下一帧耗时大于前三帧平均帧耗时2倍，则认为一次潜在卡顿。同时单帧耗时满足大于两倍电影帧耗时1000ms/24x2(由于人眼低于24帧才能辨别画面不连续性)，则认为是一次真正卡顿。同时若单帧耗时大于3倍电影帧耗时，则认为是一次严重卡顿。</p>
+</blockquote>
+<h4 id="PerfDog-Jank计算方法："><a href="#PerfDog-Jank计算方法：" class="headerlink" title="PerfDog Jank计算方法："></a>PerfDog Jank计算方法：</h4><blockquote>
+<p>同时满足两条件，则认为是一次卡顿Jank.<br>①Display FrameTime&gt;前三帧平均耗时2倍。<br>②Display FrameTime&gt;两帧电影帧耗时 (1000ms/24x2≈83.33ms)。<br>同时满足两条件，则认为是一次严重卡顿BigJank.<br>①Display FrameTime &gt;前三帧平均耗时2倍。<br>②Display FrameTime &gt;三帧电影帧耗时(1000ms/24x3=125ms)。</p>
+</blockquote>
+<ul>
+<li>未规范化应用CPU利用率 - Avg(AppCPU)[%]<br>这里未规范化CPU利用率的计算方式 = CPU执行时间/CPU总时间。如果使用这一项利用率计算APP的性能消耗，会出现在低频运行时和高频运行时CPU利用率相同的情况。<br>所以Perfdog官方建议使用规范化CPU利用率。</li>
+<li>CPU平均温度 - Avg(CTemp)[°C]</li>
+<li>规范化应用CPU利用率 - Avg(AppCPU)[%]Normalized<br>这种CPU利用率的计算方法将CPU的频率考虑进去。<br>CPU Usage(Normalized)= (CPU执行时间/CPU总时间) * (当前时刻所有CPU频率之和/所有CPU频率最大值之和)<br>这种计算方法可以更真实的反映出APP的性能消耗。</li>
+<li>最大内存占用 - Peak(Memory)[MB]</li>
+<li>平均上传速度 - Avg(Send)[KB/s]</li>
+<li>平均下载速度 - Avg(Recv)[KB/s]</li>
+<li>平均功耗 - Avg(Power)[mW]</li>
+</ul>
+<h4 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h4><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/7.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/8.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/9.jpg"></p>
+<ul>
+<li><p>平均帧率 - Avg(FPS)<br>这一个数据对应的是整个测试过程的平均帧率，可以粗略的反应游戏的流畅程度</p>
+</li>
+<li><p>帧率方差 - Var(FPS)<br>这一个数据反映的是帧率的波动大小</p>
+</li>
+<li><p>大于等于某一帧率的测试数据百分比 - FPS&gt;=30[%] FPS&gt;=45[%]<br>这一数据显示可以修改，在右下角，可以看数据的大致分布</p>
+</li>
+<li><p>降帧次数 - Drop(FPS)[/h]<br>平均每小时两个相邻的FPS点相差大于8帧的次数，反映的是画面的流畅程度</p>
+</li>
+<li><p>卡顿次数/每10分钟 - Jank(/10min)</p>
+</li>
+<li><p>严重卡顿次数/每10分钟 - BigJank(/10min)</p>
+</li>
+<li><p>卡顿率 - Stutter[%]<br>计算方式 卡顿率 = 卡顿时长 / 总时长</p>
+</li>
+<li><p>平均单帧渲染时间 - Avg(FTime)[ms]<br>这一个数据可以结合第三张图 Frame Time分析<br>如果Frame Time时长在某一个点很大幅度超过平均单帧渲染时间，那么大概率是一次卡顿</p>
+</li>
+<li><p>单帧渲染时间超过100ms - FTime&gt;=100ms[%]<br>单帧渲染时间过长，很有可能导致屏幕没有内容可以刷新，所以画面不动，即为卡顿</p>
+</li>
+<li><p>增量耗时 - Delta(FTime)&gt;100ms[/h]</p>
+</li>
+</ul>
+<h4 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h4><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/10.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/11.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/12.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/13.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/14.jpg"></p>
+<ul>
+<li>未规范化应用CPU利用率 - Avg(AppCPU)[%]<br>这里未规范化CPU利用率的计算方式 = CPU执行时间/CPU总时间。如果使用这一项利用率计算APP的性能消耗，会出现在低频运行时和高频运行时CPU利用率相同的情况。</li>
+</ul>
+<p>所以Perfdog官方建议使用规范化CPU利用率。</p>
+<ul>
+<li><p>未规范化应用CPU利用率小于等于50%/70% - AppCPU&lt;=50%[%] AppCPU&lt;=70%[%]</p>
+</li>
+<li><p>未规范化总的CPU利用率 - Avg(TotalCPU)[%]</p>
+</li>
+<li><p>未规范化总的CPU利用率小于等于50%/70% - TotalCPU&lt;=50%[%] TotalCPU&lt;=70%[%]</p>
+</li>
+<li><p>CPU平均温度 - Avg(CTemp)[°C]<br>下面一排都是规范化的CPU指标，不多赘述</p>
+</li>
+<li><p>CPU时钟频率 - CPU Clock<br>反映的是当前时间CPU各个核心的频率</p>
+</li>
+</ul>
+<h3 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h3><p>这部分对于性能测试的参考性不是很高。</p>
+<p>这里Perfdog提醒：在极限测试情况下，例如开启游戏超高帧率，建议不要勾选收集Memory Usage和Memory Detail，因为部分机型会有性能损耗。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/15.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/16.jpg"></p>
+<h3 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h3><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/17.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/18.jpg"></p>
+<ul>
+<li><p>平均GPU利用率 - Avg(GUsage)[%]<br>反映的是应用是否可以充分利用GPU性能</p>
+</li>
+<li><p>平均CPU时钟频率 - Avg(GClock)[MHz]<br>反映的是应用的负载压力</p>
+</li>
+</ul>
+<h3 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h3><p>这一部分对于非实时对战游戏参考性不是很高。测试王者荣耀等对网络要求较高的游戏可以进行关注。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/19.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/20.jpg"></p>
+<h3 id="Battery"><a href="#Battery" class="headerlink" title="Battery"></a>Battery</h3><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/21.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/22.jpg"></p>
+<ul>
+<li><p>平均功耗 - Avg(Power)[mW]<br>在一定程度上反映了当前手机的功耗</p>
+</li>
+<li><p>耗电量 - Sum(Battery)[mWh]<br>手机在运行测试期间所消耗的电量</p>
+</li>
+<li><p>平均电压 - Avg(Voltage)[mV]</p>
+</li>
+<li><p>平均电流 - Avg(Current)[mA]</p>
+</li>
+</ul>
+<h3 id="Energy-Usage"><a href="#Energy-Usage" class="headerlink" title="Energy Usage"></a>Energy Usage</h3><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/23.jpg"></p>
+<p>监控应用使用的能耗情况，可以监控CPU，GPU，网络模块，定位模块等等</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于芯片的性能测试，我认为主要应该关注的数据项目为</p>
+<ul>
+<li><p>平均帧率 - Avg(FPS)<br>反映的是设备的游戏运行稳定性，越接近设定的游戏帧率越好。</p>
+</li>
+<li><p>帧率方差 - Var(FPS)<br>反映的是设备掉帧的严重程度，越小越好。</p>
+</li>
+<li><p>降帧次数 - Drop(FPS)[/h]<br>反映的是设备的掉帧次数（掉帧次数不等于卡顿次数），越少越好。</p>
+</li>
+<li><p>卡顿次数/每10分钟 - Jank(/10min)<br>反映的是人所能感知的小卡顿次数，越少越好。</p>
+</li>
+<li><p>严重卡顿次数/每10分钟 - BigJank(/10min)<br>反映的是人所能感知的严重卡顿次数，越少越好。</p>
+</li>
+<li><p>平均单帧渲染时间 - Avg(FTime)[ms]<br>反映的是设备对画面单一帧的渲染平均时间，若某一时刻对画面渲染的时间远远超过平均值，说明此时屏幕内容没有刷新，会觉得明显卡顿，单帧渲染时间越贴近平均值越好。</p>
+</li>
+<li><p>规范化的应用CPU利用率 - Avg(AppCPU)[%]Normalized<br>反映的是排除其他影响因素后应用对于CPU性能的消耗。</p>
+</li>
+<li><p>CPU平均温度 - Avg(CTemp)[°C]<br>反映的是应用长时间运行使CPU升高的温度，作为温控降频的参考数据。</p>
+</li>
+<li><p>CPU时钟频率 - CPU Clock<br>反映的是应用运行时CPU的调度情况，作为卡顿分析和功耗分析的参考数据。</p>
+</li>
+<li><p>平均GPU利用率 - Avg(GUsage)[%]<br>反映的是应用对于GPU的使用情况。</p>
+</li>
+<li><p>平均CPU时钟频率 - Avg(GClock)[MHz]<br>反映的是应用运行时GPU的调度情况，作为卡顿分析和功耗分析的参考数据。</p>
+</li>
+<li><p>平均功耗 - Avg(Power)[mW]<br>反映的是应用运行时的平均功耗，高中低负载在功耗这一测试项目差距较大，例如骁龙888在高负载可以跑到11w的功耗，在低负载只有4w，续航和发热因此不同。</p>
+</li>
+</ul>
+<h2 id="云端页面功能介绍"><a href="#云端页面功能介绍" class="headerlink" title="云端页面功能介绍"></a>云端页面功能介绍</h2><h3 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h3><h4 id="我的数据"><a href="#我的数据" class="headerlink" title="我的数据"></a>我的数据</h4><p>存放着测试结束后上传的测试结果，当测试结果较多时可以设置条件筛选数据。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/24.jpg"></p>
+<h4 id="任务数据"><a href="#任务数据" class="headerlink" title="任务数据"></a>任务数据</h4><p>Perfdog支持创建测试任务，你可以邀请小伙伴一起进行测试，并将数据归档到任务中进行分享。想加入SGPT测试计划的朋友可以在酷安私信我，我会发给你邀请链接，同时你可以看到SGPT计划的最新进展并且参与进来。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/25.jpg"></p>
+<h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p>在这里可以针对不同应用数据进行分类显示</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/26.jpg"></p>
+<h3 id="具体数据"><a href="#具体数据" class="headerlink" title="具体数据"></a>具体数据</h3><h4 id="图表基本操作（数据统计范围修改，图标曲线显示）"><a href="#图表基本操作（数据统计范围修改，图标曲线显示）" class="headerlink" title="图表基本操作（数据统计范围修改，图标曲线显示）"></a>图表基本操作（数据统计范围修改，图标曲线显示）</h4><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/27.jpg"></p>
+<h4 id="图表拖选操作（查看某一时间段的测试数据）"><a href="#图表拖选操作（查看某一时间段的测试数据）" class="headerlink" title="图表拖选操作（查看某一时间段的测试数据）"></a>图表拖选操作（查看某一时间段的测试数据）</h4><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/28.jpg"></p>
+<h4 id="点选查看卡顿具体场景"><a href="#点选查看卡顿具体场景" class="headerlink" title="点选查看卡顿具体场景"></a>点选查看卡顿具体场景</h4><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/29.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/30.jpg"></p>
+<h4 id="不同测试范例对比"><a href="#不同测试范例对比" class="headerlink" title="不同测试范例对比"></a>不同测试范例对比</h4><h5 id="可以添加5条测试用例"><a href="#可以添加5条测试用例" class="headerlink" title="可以添加5条测试用例"></a>可以添加5条测试用例</h5><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/31.jpg"></p>
+<h5 id="对比不同的测试用例"><a href="#对比不同的测试用例" class="headerlink" title="对比不同的测试用例"></a>对比不同的测试用例</h5><p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/32.jpg"></p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>今天本来是想要发两篇文章的，顺便开一个能让大家都参与进来的一个企划。先把企划的头图设计放出来吧。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/software/perfdog/SGPT.png"></p>
+<p>本篇文章是《应用使用指南》的第二期，我相信大家可以学会Perfdog这款游戏性能测试软件的使用方法。我的一个想法是，从这个系列可以引出很多新的，有趣的系列，让大家都可以参与进去。</p>
+<p>如上图所示，从第二期引出了一个SGPT（Soc Game Performance Test）计划，我希望根据自己的理解设计一个游戏测试标准，来测试不同机型对于游戏性能的调度能力。</p>
+<p>这一个计划如果只有我一个人收集数据，第一是我个人学业的原因，我并不能有太多时间来进行游戏测试；第二是我个人并没有经济能力去购买设备。如果大家都能参与进来，那么收集到数据会越来越多，我们也能在众多测评里获得一份最真实的数据。</p>
+<p>这里我们采用的是Perfdog的团队功能，这里把加入的链接放在这里**<a target="_blank" rel="noopener" href="https://perfdog.qq.com/taskdata/201592">上杉九月的团队</a>**。希望大家可以参与进来，后续会加入激励计划，争取给此计划贡献多的朋友一些动力。</p>
+<p>简单介绍结束，说一下目前这个企划遇到的问题。因为我个人平时玩的游戏种类比较少，目前只玩崩坏3和原神，这两类游戏都属于高负载的类型。而对于中等负载和低负载的游戏，个人的了解很少，希望各位可以在评论区讨论一下，什么游戏可以被纳入中负载和低负载的测试计划中，谢谢各位！</p>
+<h2 id="各平台更新计划"><a href="#各平台更新计划" class="headerlink" title="各平台更新计划"></a>各平台更新计划</h2><ul>
+<li>个人博客 周六晚八点</li>
+<li>酷安 微信公众号 周日晚八点</li>
+<li>哔哩哔哩 微博 周一晚八点</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/sakurasep/images@1.2/basic/chevereto/about_me.png" alt="about_me"></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\next\posts\1196\" rel="bookmark">《应用使用指南》存储空间隔离_第1期</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\next\posts\42550\" rel="bookmark">《零基础教程》云服务器实现定时签到_第1期</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\next\posts\39030\" rel="bookmark">使用Cmd批处理命令同步主站更新</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>原作者： </strong>上杉九月
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://sakurasep.site/next/posts/34525/" title="《应用使用指南》Perfdog_第2期">https://sakurasep.site/next/posts/34525/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sakurasep">
+          <span class="icon">
+            <i class="fab fa-telegram"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/next/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/next/tags/%E9%9B%B6%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> 零基础</a>
+              <a href="/next/tags/%E5%BA%94%E7%94%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="tag"><i class="fa fa-tag"></i> 应用使用指南</a>
+              <a href="/next/tags/PC/" rel="tag"><i class="fa fa-tag"></i> PC</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/next/posts/1196/" rel="prev" title="《应用使用指南》存储空间隔离_第1期">
+                  <i class="fa fa-chevron-left"></i> 《应用使用指南》存储空间隔离_第1期
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/next/posts/29349/" rel="next" title="《Html5学习笔记》HTML5拓展练习_第1期">
+                  《Html5学习笔记》HTML5拓展练习_第1期 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">上杉九月</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/next/js/utils.js"></script><script src="/next/js/motion.js"></script><script src="/next/js/next-boot.js"></script><script src="/next/js/bookmark.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+<script src="/next/js/local-search.js"></script>
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.5/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/next/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+<script data-pjax>
+var mermaidElements = document.querySelectorAll('.mermaid');
+if (mermaidElements.length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js', () => {
+    mermaidElements.forEach(element => {
+      const newElement = document.createElement('div');
+      newElement.innerHTML = element.innerHTML;
+      newElement.className = element.className;
+      element.parentNode.replaceChild(newElement, element);
+    });
+
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+  <script>
+    NProgress.configure({
+      showSpinner: true
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <div class="pjax">
+
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'none'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.1.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://sakurasep.site/next/posts/34525/',]
+      });
+      });
+  </script>
+
+    </div>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
