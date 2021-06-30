@@ -107,7 +107,7 @@
     <link href="https://sakurasep.site/yun/posts/44775/"/>
     <id>https://sakurasep.site/yun/posts/44775/</id>
     <published>2021-03-26T08:06:48.000Z</published>
-    <updated>2021-06-08T12:51:39.484Z</updated>
+    <updated>2021-06-30T13:03:13.822Z</updated>
     
     
     <summary type="html">发布最新消息</summary>
@@ -161,9 +161,9 @@
     
     <category term="零基础" scheme="https://sakurasep.site/yun/tags/%E9%9B%B6%E5%9F%BA%E7%A1%80/"/>
     
-    <category term="应用使用指南" scheme="https://sakurasep.site/yun/tags/%E5%BA%94%E7%94%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    
     <category term="PC" scheme="https://sakurasep.site/yun/tags/PC/"/>
+    
+    <category term="应用使用指南" scheme="https://sakurasep.site/yun/tags/%E5%BA%94%E7%94%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     
   </entry>
   
@@ -205,9 +205,9 @@
     <category term="零基础教程" scheme="https://sakurasep.site/yun/categories/%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Python" scheme="https://sakurasep.site/yun/tags/Python/"/>
-    
     <category term="云服务器" scheme="https://sakurasep.site/yun/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Python" scheme="https://sakurasep.site/yun/tags/Python/"/>
     
     <category term="零基础" scheme="https://sakurasep.site/yun/tags/%E9%9B%B6%E5%9F%BA%E7%A1%80/"/>
     
