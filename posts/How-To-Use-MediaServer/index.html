@@ -1,0 +1,1134 @@
+
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>媒体库使用指南 - 九月的生活</title>
+
+  
+    <meta name="description" content="All in one 主机基本搭建完成了，这次媒体库也得到了一次大升级，目前先开放媒体库进行测试，后续会更新媒体库详细的搭建指南。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="媒体库使用指南">
+<meta property="og:url" content="https://blog.上杉九月.cn/posts/How-To-Use-MediaServer/">
+<meta property="og:site_name" content="九月的生活">
+<meta property="og:description" content="All in one 主机基本搭建完成了，这次媒体库也得到了一次大升级，目前先开放媒体库进行测试，后续会更新媒体库详细的搭建指南。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.xn--fhqths51enha.cn/assets/icon/new_avatar_256.png">
+<meta property="article:published_time" content="2024-02-21T08:02:42.000Z">
+<meta property="article:modified_time" content="2024-03-18T12:05:37.000Z">
+<meta property="article:author" content="上杉九月">
+<meta property="article:tag" content="Emby">
+<meta property="article:tag" content="Telegram">
+<meta property="article:tag" content="媒体库">
+<meta property="article:tag" content="Infuse">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.xn--fhqths51enha.cn/assets/icon/new_avatar_256.png">
+  
+  
+  
+  <meta name="keywords" content="Emby,Telegram,媒体库,Infuse">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="九月的生活" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="/assets/icon/favicon32.ico">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"上杉九月","sameAs":[],"image":"/assets/icon/new_avatar_256.png"},"dateCreated":"2024-02-21T16:02:42+08:00","dateModified":"2024-03-18T20:05:37+08:00","datePublished":"2024-02-21T16:02:42+08:00","description":"","headline":"媒体库使用指南","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.上杉九月.cn/posts/How-To-Use-MediaServer/"},"publisher":{"@type":"Organization","name":"上杉九月","sameAs":[],"image":"/assets/icon/new_avatar_256.png","logo":{"@type":"ImageObject","url":"/assets/icon/new_avatar_256.png"}},"url":"https://blog.上杉九月.cn/posts/How-To-Use-MediaServer/","keywords":"Emby, Telegram, 媒体库, Infuse","thumbnailUrl":"../../assets/cover/媒体库使用指南.jpg","image":1}</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css" />
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/page/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/assets/icon/new_avatar_256.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">九月的生活</div><div class="sub normal cap">无限进步!</div><div class="sub hover cap" style="opacity:0"> blog.上杉九月.cn</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="我的手账" href="/page/about/timeline/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><mask id="IconifyId18dd63a1ebb63860d4"><g fill="none"><path fill="#fff" d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12"/><path fill="#000" fill-rule="evenodd" d="M12 7.25a.75.75 0 0 1 .75.75v3.69l2.28 2.28a.75.75 0 1 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V8a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/></g></mask></defs><path fill="currentColor" d="M0 0h24v24H0z" mask="url(#IconifyId18dd63a1ebb63860d4)"/></svg></a><a class="nav-item" title="项目" href="/page/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="友链" href="/page/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+<widget class="widget-wrapper related post-list"><div class="widget-header dis-select"><span class="name">专栏：home_server</span></div><div class="widget-body"><a class="item" href="/posts/emby_bot/"><span class="title">EmbyBot使用指南</span></a><a class="item" href="/posts/anime-collect-bdrip/"><span class="title">动漫年鉴 - BDRip</span></a><a class="item" href="/posts/Unraid-IPV6/"><span class="title">Unraid中如何使得容器获取IPV6地址</span></a><a class="item active" href="/posts/How-To-Use-MediaServer/"><span class="title">媒体库使用指南</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a></div></widget>
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/posts/daily_study_2/"><span class="title">沉淀计划 Day2</span></a><a class="item title" href="/posts/daily_study_3/"><span class="title">沉淀计划 Day3</span></a><a class="item title" href="/posts/daily_study_1/"><span class="title">沉淀计划 Day1</span></a><a class="item title" href="/posts/emby_bot/"><span class="title">EmbyBot使用指南</span></a><a class="item title" href="/posts/anime-collect-bdrip/"><span class="title">动漫年鉴 - BDRip</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/sakurasep" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.163.com/#/user/home?id=308455780" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3845874.svg"/></a><a class="social" href="https://bu.dusays.com/2023/12/28/658d3928982fc.png" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg"/></a><a class="social" href="https://t.me/+XrFIEcN4cyEyMzhl" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/></a><a class="social" href="https://weibo.com/u/5703570229" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg"/></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top"><img class="lazy bg" data-src="../../assets/banner/post_banner_1.jpg">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/page/topic/">专栏</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/posts/emby_bot/">home_server</a></div>
+<div class="flex-row" id="post-meta"><a class="author" href="/author/sakurasep/">上杉九月</a><span class="sep"></span><span class="text created"><time datetime="2024-02-21T08:02:42.000Z">2024-02-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-03-18T12:05:37.000Z">2024-03-18</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>媒体库使用指南</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h2 id="一、媒体库介绍"><a href="#一、媒体库介绍" class="headerlink" title="一、媒体库介绍"></a>一、媒体库介绍</h2><p>目前在服务器上同时运行着两个媒体库，一个是我自行搭建的，使用 NASTools 和 AutoBangumi 进行媒体管理和追番自动化的本地库（以后简称本地库）。</p>
+<h3 id="1-本地库"><a href="#1-本地库" class="headerlink" title="1. 本地库"></a>1. 本地库</h3><h4 id="1-1-本地库的优点"><a href="#1-1-本地库的优点" class="headerlink" title="1.1 本地库的优点"></a>1.1 本地库的优点</h4><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>可以通过微信或者 Telegram 进行交互，一键下载入库你想看的影片</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>使用 AIO 服务器的核显进行解码，理论上支持所有硬件的播放</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>在外观看如果流量不足可以使用转码功能，将高码率的视频转成较低码率以降低流量消耗（因为有些 4K 电影原盘的码率可能平均 30Mb/s ，也就是正常的 5G 网速才能够跑满）</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>支持实时更新蜜柑计划上的新番，基本做到制作组发布后几个小时内获取到新番</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>支持Infuse，iOS & Apple TV & macOS 设备推荐使用 Infuse，价格便宜，效果更好</span></div>
+
+<h4 id="1-2-本地库的缺点"><a href="#1-2-本地库的缺点" class="headerlink" title="1.2 本地库的缺点"></a>1.2 本地库的缺点</h4><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>外网上传带宽取决于我家里宽带的上传带宽，目前是 50Mbps，无法实现多人流畅观看 4K 电影原盘，后续我会将部分影片上传到阿里云盘，以获取直链加速外网播放速度</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>资源较少，目前收录的内容见媒体库收录存档，后续会逐渐增加存量，明年会将硬盘阵列升级到 8x8TB 的机械硬盘阵列，目前存储空间为 14TB</span></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240221200510095.jpg" data-src="../../img/媒体库使用指南/image-20240221200510095.jpg" alt="本地媒体库" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">本地媒体库</span></div></div>
+
+<h3 id="2-网络库"><a href="#2-网络库" class="headerlink" title="2. 网络库"></a>2. 网络库</h3><p>一个是网上最全，更新相对及时的小雅媒体库，它的环境是通过阿里云盘转存小雅保存好的文件，然后导入小雅刮削好的元数据，实现资源以媒体库的形式展示出来（以下简称网络库）。</p>
+<h4 id="2-1-网络库的优点"><a href="#2-1-网络库的优点" class="headerlink" title="2.1 网络库的优点"></a>2.1 网络库的优点</h4><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>全网最全的影视资源，基本没有你想不到的</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>访问速度取决于阿里云盘的下载速度，我是阿里云盘的会员，理论上能跑满 500Mbps 的宽带</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>更新速度尚可，小雅媒体库算是一个公益，持续，稳定的媒体库了</span></div>
+
+<h4 id="2-2-网络库的缺点"><a href="#2-2-网络库的缺点" class="headerlink" title="2.2 网络库的缺点"></a>2.2 网络库的缺点</h4><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>Infuse 请不要使用小雅媒体库，因为会出现奇奇怪怪的 bug</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>小雅提供的 Emby 容器我个人并没有配置转码，在某些设备（例如直接使用网页）上可能无法播放</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>新番没有实时更新，目前最新的是 2023 年冬季动漫，还没有更新 2024 年春季动漫</span></div>
+
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>有些 bug 我是修不了的，因为同步文件和数据不是由我管理，需要等待脚本更新</span></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240221200711623.jpg" data-src="../../img/媒体库使用指南/image-20240221200711623.jpg" alt="image-20240221200711623" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240221200711623</span></div></div>
+
+<h2 id="二、媒体库的使用"><a href="#二、媒体库的使用" class="headerlink" title="二、媒体库的使用"></a>二、媒体库的使用</h2><h3 id="1-如何观看媒体库中的影片"><a href="#1-如何观看媒体库中的影片" class="headerlink" title="1. 如何观看媒体库中的影片"></a>1. 如何观看媒体库中的影片</h3><p>十分不推荐使用网页端，因为网页端无法调用本机进行解码，会导致观看所有资源都会通过服务器进行转码，大大消耗了服务器的资源。</p>
+<div class="tag-plugin blockquote" indent="undefined"><p>0318 客户端资源仅用于学习交流，所有资源来自于以下Telegram频道。你可以通过源 TG 频道下载，也可以通过我提供的网盘下载</p></div>
+
+<div class="tag-plugin link dis-select"><a class="link-card rich" title="Emby学习小秘" href="https://t.me/EmbyNoisyX" target="_blank" rel="external nofollow noopener noreferrer" cardlink data-api="https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url=https://t.me/EmbyNoisyX" autofill="icon,desc"><div class="top"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div><span class="cap link footnote">https://t.me/EmbyNoisyX</span></div><div class="bottom"><span class="title">Emby学习小秘</span><span class="cap desc footnote"></span></div></a></div>
+
+<h4 id="1-1-Windows-用户"><a href="#1-1-Windows-用户" class="headerlink" title="1.1 Windows 用户"></a>1.1 Windows 用户</h4><p>Windows 的使用很方便，下载开心版的客户端即可</p>
+<div class="tag-plugin link dis-select"><a class="link-card rich" title="Windows开心版" href="https://cloud.sakurasep.top/s/jRfM" target="_blank" rel="external nofollow noopener noreferrer" cardlink data-api="https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url=https://cloud.sakurasep.top/s/jRfM" autofill="icon,desc"><div class="top"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div><span class="cap link footnote">https://cloud.sakurasep.top/s/jRfM</span></div><div class="bottom"><span class="title">Windows开心版</span><span class="cap desc footnote"></span></div></a></div>
+
+<p>安装结束后有一个配置和卸载工具，可以执行命令针对客户端进行修改，Windows 的玩法是最多的</p>
+<p>安装完成打开客户端，输入服务器地址以及账号密码，即可进行观看</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315112011683.jpg" data-src="../../img/媒体库使用指南/image-20240315112011683.jpg" alt="image-20240315112011683" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315112011683</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315112028653.jpg" data-src="../../img/媒体库使用指南/image-20240315112028653.jpg" alt="image-20240315112028653" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315112028653</span></div></div>
+
+<h4 id="1-2-macOS-用户"><a href="#1-2-macOS-用户" class="headerlink" title="1.2 macOS 用户"></a>1.2 macOS 用户</h4><h5 id="使用-Electron-版（次优）"><a href="#使用-Electron-版（次优）" class="headerlink" title="使用 Electron 版（次优）"></a>使用 Electron 版（次优）</h5><div class="tag-plugin link dis-select"><a class="link-card rich" title="macOS Electron Emby" href="https://cloud.sakurasep.top/s/k5h6" target="_blank" rel="external nofollow noopener noreferrer" cardlink data-api="https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url=https://cloud.sakurasep.top/s/k5h6" autofill="icon,desc"><div class="top"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div><span class="cap link footnote">https://cloud.sakurasep.top/s/k5h6</span></div><div class="bottom"><span class="title">macOS Electron Emby</span><span class="cap desc footnote"></span></div></a></div>
+
+<h5 id="使用-Emby-官方客户端-（不推荐）"><a href="#使用-Emby-官方客户端-（不推荐）" class="headerlink" title="使用 Emby 官方客户端 （不推荐）"></a>使用 Emby 官方客户端 （不推荐）</h5><div class="tag-plugin blockquote" indent="undefined"><p>注意事项 使用脚本破解很容易失效，为了 Emby 这官方客户端的效果花 30 一个月买订阅又不值得。故不推荐使用，破解成功的话千万不要升级，因为很难说升级后脚本还能不能适配</p></div>
+
+<p>在 App Store 下载 Emby</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315102103608.jpg" data-src="../../img/媒体库使用指南/image-20240315102103608.jpg" alt="image-20240315102103608" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315102103608</span></div></div>
+
+<p>在终端输入</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/psychopasss/ss_rule/main/macOS/EmbyUnlock.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>脚本输出</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315102223048.jpg" data-src="../../img/媒体库使用指南/image-20240315102223048.jpg" alt="image-20240315102223048" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315102223048</span></div></div>
+
+<p>输入服务器地址进入首页，正常播放</p>
+<div class="tag-plugin blockquote" indent="undefined"><p>如果弹出付费订阅验证，请关闭代理以及重新运行脚本</p></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315102239995.jpg" data-src="../../img/媒体库使用指南/image-20240315102239995.jpg" alt="image-20240315102239995" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315102239995</span></div></div>
+
+<h5 id="使用第三方客户端-Infuse-（付费优选）"><a href="#使用第三方客户端-Infuse-（付费优选）" class="headerlink" title="使用第三方客户端 Infuse （付费优选）"></a>使用第三方客户端 Infuse （付费优选）</h5><div class="tag-plugin blockquote" indent="undefined"><p>小雅 Emby 不要添加到Infuse!!!  Infuse 的扫库会使得 小雅请求阿里云盘的 token 过量，从而失效</p></div>
+
+<p>相比于付费给 Emby，Infuse 的会员价格更适合，并且是全平台，你的 iPad iPhone macOS AppleTV 都只需要购买一次订阅就可以全平台享受，价格也不贵，月费 13 元（之前 7 元），年费 88，总之还是挺实惠的。</p>
+<p>我一直在用 Infuse 就是因为 Infuse 界面确实好看，等之后买了 AppleTV 也能顺畅使用。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315103009176.jpg" data-src="../../img/媒体库使用指南/image-20240315103009176.jpg" alt="image-20240315103009176" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315103009176</span></div></div>
+
+<p>从 App Store 下载 Infuse</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315105644986.jpg" data-src="../../img/媒体库使用指南/image-20240315105644986.jpg" alt="image-20240315105644986" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315105644986</span></div></div>
+
+<p>打开后在<code>文件-新增文件来源</code> 添加服务器</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315103253480.jpg" data-src="../../img/媒体库使用指南/image-20240315103253480.jpg" alt="image-20240315103253480" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315103253480</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315103450782.jpg" data-src="../../img/媒体库使用指南/image-20240315103450782.jpg" alt="image-20240315103450782" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315103450782</span></div></div>
+
+<p>在 <code>其他 Emby...</code> 这里添加服务器地址，选择媒体库模式</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315103610061.jpg" data-src="../../img/媒体库使用指南/image-20240315103610061.jpg" alt="image-20240315103610061" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315103610061</span></div></div>
+
+<p>添加后等待 Infuse 扫库刮削媒体信息，刮削完成在首页变便会显示内容</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315105235929.jpg" data-src="../../img/媒体库使用指南/image-20240315105235929.jpg" alt="image-20240315105235929" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315105235929</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315105247243.jpg" data-src="../../img/媒体库使用指南/image-20240315105247243.jpg" alt="image-20240315105247243" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315105247243</span></div></div>
+
+<h5 id="使用-VidHub"><a href="#使用-VidHub" class="headerlink" title="使用 VidHub"></a>使用 VidHub</h5><p>VidHub 是一款免费的国产播放器，最近才听说，试着用了用还是挺不错的，后续更新对更多片源格式的支持后应该会能和 Infuse 刚一刚。</p>
+<p>在 App Store 下载 VidHub</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315105621435.jpg" data-src="../../img/媒体库使用指南/image-20240315105621435.jpg" alt="image-20240315105621435" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315105621435</span></div></div>
+
+<p>VidHub 也支持两种添加方式</p>
+<p>第一种是针对你没有媒体库管理软件，使用 bt 下载电影或是云盘转存电影，此时可以使用文件源</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315105922765.jpg" data-src="../../img/媒体库使用指南/image-20240315105922765.jpg" alt="image-20240315105922765" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315105922765</span></div></div>
+
+<p>第二种是针对有媒体库的用户，这里我们就选择第二种方式</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315110628955.jpg" data-src="../../img/媒体库使用指南/image-20240315110628955.jpg" alt="image-20240315110628955" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315110628955</span></div></div>
+
+<p>连接成功后点击已连接的服务器</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315110825506-0472106.jpg" data-src="../../img/媒体库使用指南/image-20240315110825506-0472106.jpg" alt="image-20240315110825506" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315110825506</span></div></div>
+
+<p>剧集界面</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315110848539.jpg" data-src="../../img/媒体库使用指南/image-20240315110848539.jpg" alt="image-20240315110848539" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315110848539</span></div></div>
+
+<h4 id="1-3-Android-用户"><a href="#1-3-Android-用户" class="headerlink" title="1.3 Android 用户"></a>1.3 Android 用户</h4><p>目前安卓上有两个版本，一个是常规版，一个是 MIUI 特供版，两者在界面上没有什么区别，特供版改成了小米视频的包名，用于启动视频工具箱里的补帧功能</p>
+<div class="tag-plugin blockquote" indent="undefined"><p>MIUI特供版 该版本是为了支持MIUI 12.xx &#x2F; 骁龙8xx平台专属的动态画面补偿（视频补帧）功能而做修改，并添加了开心整合包内容，详细修改见频道记录。</p></div>
+
+<div class="tag-plugin link dis-select"><a class="link-card rich" title="Android 普通版" href="https://cloud.sakurasep.top/s/l5i5" target="_blank" rel="external nofollow noopener noreferrer" cardlink data-api="https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url=https://cloud.sakurasep.top/s/l5i5" autofill="icon,desc"><div class="top"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div><span class="cap link footnote">https://cloud.sakurasep.top/s/l5i5</span></div><div class="bottom"><span class="title">Android 普通版</span><span class="cap desc footnote"></span></div></a></div>
+
+<div class="tag-plugin link dis-select"><a class="link-card rich" title="MIUI特供版" href="https://cloud.sakurasep.top/s/l5i5" target="_blank" rel="external nofollow noopener noreferrer" cardlink data-api="https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url=https://cloud.sakurasep.top/s/l5i5" autofill="icon,desc"><div class="top"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div><span class="cap link footnote">https://cloud.sakurasep.top/s/l5i5</span></div><div class="bottom"><span class="title">MIUI特供版</span><span class="cap desc footnote"></span></div></a></div>
+
+<h4 id="1-4-IOS-用户"><a href="#1-4-IOS-用户" class="headerlink" title="1.4 IOS 用户"></a>1.4 IOS 用户</h4><div class="tag-plugin blockquote" indent="undefined"><p>注意 因为官方版的 Emby 破解过于麻烦，需要使用到圈 X，圈 X 还是挺贵的，有这钱还不如去买 Infuse</p></div>
+
+<h5 id="使用-Infuse"><a href="#使用-Infuse" class="headerlink" title="使用 Infuse"></a>使用 Infuse</h5><p>从 App Store 下载 Infuse</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/IMG_1370.jpg" data-src="../../img/媒体库使用指南/IMG_1370.jpg" alt="IMG_1370" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">IMG_1370</span></div></div>
+
+<p>如果你在 macOS 已经配置过了，iPad 端会云同步你的连接信息</p>
+<p>如果没有配置，点击主页的设置，和 macOS 端一样的配置方法</p>
+<div class="tag-plugin blockquote" indent="undefined"><p>软件首页 &amp; 媒体信息页</p></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/IMG_1376.jpg" data-src="../../img/媒体库使用指南/IMG_1376.jpg" alt="IMG_1376" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">IMG_1376</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/IMG_1377.jpg" data-src="../../img/媒体库使用指南/IMG_1377.jpg" alt="IMG_1377" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">IMG_1377</span></div></div>
+
+<h5 id="使用-VidHub-1"><a href="#使用-VidHub-1" class="headerlink" title="使用 VidHub"></a>使用 VidHub</h5><p>从 App Store 下载 VidHub</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/IMG_1371.jpg" data-src="../../img/媒体库使用指南/IMG_1371.jpg" alt="IMG_1371" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">IMG_1371</span></div></div>
+
+<p>同样的，VidHub 也有云端同步功能，他的配置方法和 macOS 仍然保持相同</p>
+<div class="tag-plugin blockquote" indent="undefined"><p>效果展示 软件首页和媒体信息页</p></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/IMG_1372.jpg" data-src="../../img/媒体库使用指南/IMG_1372.jpg" alt="IMG_1372" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">IMG_1372</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/IMG_1373.jpg" data-src="../../img/媒体库使用指南/IMG_1373.jpg" alt="IMG_1373" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">IMG_1373</span></div></div>
+
+<h4 id="1-5-Android-TV-用户"><a href="#1-5-Android-TV-用户" class="headerlink" title="1.5 Android TV 用户"></a>1.5 Android TV 用户</h4><p>手里没有，大概介绍一下安装流程。</p>
+<ol>
+<li>下载电视版本的 Emby 客户端</li>
+<li>一般来说将安装包拷贝到 U盘，然后进入电视中安装（有些电视不允许安装第三方应用，这样的话需要打开 adb 调试，然后在同一个局域网内进行 adb 安装，这个我们以后再说）</li>
+<li>打开应用，输入服务器地址和账号密码进行观看</li>
+</ol>
+<div class="tag-plugin link dis-select"><a class="link-card rich" title="Android TV 通用版" href="https://cloud.sakurasep.top/s/nRtq" target="_blank" rel="external nofollow noopener noreferrer" cardlink data-api="https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url=https://cloud.sakurasep.top/s/nRtq" autofill="icon,desc"><div class="top"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div><span class="cap link footnote">https://cloud.sakurasep.top/s/nRtq</span></div><div class="bottom"><span class="title">Android TV 通用版</span><span class="cap desc footnote"></span></div></a></div>
+
+<h4 id="1-6-Apple-TV-用户"><a href="#1-6-Apple-TV-用户" class="headerlink" title="1.6 Apple TV 用户"></a>1.6 Apple TV 用户</h4><p>手里没有，大概介绍一下安装流程。</p>
+<ol>
+<li>登录外区 Apple ID 账号，一般来说美区就可以，下载 Infuse 或者 VidHub</li>
+<li>输入服务器地址和账号密码进行观看</li>
+</ol>
+<h3 id="2-如何搜索你想看的内容"><a href="#2-如何搜索你想看的内容" class="headerlink" title="2. 如何搜索你想看的内容"></a>2. 如何搜索你想看的内容</h3><p>因为我使用了 Nastool 作为媒体库管理工具，所以在这里实现了两种交互方式，企业微信和 Telegram。企业微信供内部交流使用，开放给大家的是 Telegram 群组</p>
+<h4 id="添加-Telegram-群组-和-Telegram-Bot"><a href="#添加-Telegram-群组-和-Telegram-Bot" class="headerlink" title="添加 Telegram 群组 和 Telegram Bot"></a>添加 Telegram 群组 和 Telegram Bot</h4><p>Bot <code>@sakurasep_nastool_bot</code></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315181457209.jpg" data-src="../../img/媒体库使用指南/image-20240315181457209.jpg" alt="image-20240315181457209" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315181457209</span></div></div>
+
+<div class="tag-plugin link dis-select"><a class="link-card rich" title="Channel" href="https://t.me/+IgxEydBNUuZiNzM1" target="_blank" rel="external nofollow noopener noreferrer" cardlink data-api="https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url=https://t.me/+IgxEydBNUuZiNzM1" autofill="icon,desc"><div class="top"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div><span class="cap link footnote">https://t.me/+IgxEydBNUuZiNzM1</span></div><div class="bottom"><span class="title">Channel</span><span class="cap desc footnote"></span></div></a></div>
+
+<div class="tag-plugin blockquote" indent="undefined"><p>注意事项 Bot 是用于发送消息与媒体管理服务进行交互的，Channel 是接受消息通知的。</p></div>
+
+<h4 id="获取-ID-并-添加权限"><a href="#获取-ID-并-添加权限" class="headerlink" title="获取 ID 并 添加权限"></a>获取 ID 并 添加权限</h4><p>如果想使用交互请加我的 TG 进行私聊，发给我你的 ID，以下是 ID 获取方法</p>
+<p>获取 ID 的 bot <code>@getidsbot</code></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315181714464.jpg" data-src="../../img/媒体库使用指南/image-20240315181714464.jpg" alt="image-20240315181714464" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315181714464</span></div></div>
+
+<p>添加后输入 <code>/start</code> 开始</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315181805232.jpg" data-src="../../img/媒体库使用指南/image-20240315181805232.jpg" alt="image-20240315181805232" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315181805232</span></div></div>
+
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><p>找到刚才添加的媒体管理 bot</p>
+<p>直接发送你想看的片名，注意，近期上映的院线影片在下线前不会搜到。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315182516121.jpg" data-src="../../img/媒体库使用指南/image-20240315182516121.jpg" alt="image-20240315182516121" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315182516121</span></div></div>
+
+<p>点击链接可以查看影片详细的信息，确认无误后发送序号自动开始下载入库，根据下载的大小和做种人数，基本热门的都能在几个小时内完成下载。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315182655272.jpg" data-src="../../img/媒体库使用指南/image-20240315182655272.jpg" alt="image-20240315182655272" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315182655272</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315182825811.jpg" data-src="../../img/媒体库使用指南/image-20240315182825811.jpg" alt="image-20240315182825811" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315182825811</span></div></div>
+
+<h4 id="入库成功"><a href="#入库成功" class="headerlink" title="入库成功"></a>入库成功</h4><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315192732693.jpg" data-src="../../img/媒体库使用指南/image-20240315192732693.jpg" alt="image-20240315192732693" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315192732693</span></div></div>
+
+<p>此时 Emby 服务器中便有了<code>水浒传</code></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240315192816686.jpg" data-src="../../img/媒体库使用指南/image-20240315192816686.jpg" alt="image-20240315192816686" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240315192816686</span></div></div>
+
+<h2 id="三、动漫归档计划"><a href="#三、动漫归档计划" class="headerlink" title="三、动漫归档计划"></a>三、动漫归档计划</h2><p>相比于非动漫来说，我认为小雅媒体库做的已经很好了，唯独对于动漫这方面来说小雅内容并不是特别优质。</p>
+<p>目前的进度</p>
+<h3 id="1-2024"><a href="#1-2024" class="headerlink" title="1. 2024"></a>1. 2024</h3><h4 id="2024-春季新番"><a href="#2024-春季新番" class="headerlink" title="2024 春季新番"></a>2024 春季新番</h4><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240318162634791.jpg" data-src="../../img/媒体库使用指南/image-20240318162634791.jpg" alt="image-20240318162634791" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240318162634791</span></div></div>
+
+<h3 id="2-2023"><a href="#2-2023" class="headerlink" title="2. 2023"></a>2. 2023</h3><h4 id="2023-冬季未完结"><a href="#2023-冬季未完结" class="headerlink" title="2023 冬季未完结"></a>2023 冬季未完结</h4><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/2023年冬季未完结动漫.jpg" data-src="../../img/媒体库使用指南/2023年冬季未完结动漫.jpg" alt="2023年冬季未完结动漫" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">2023年冬季未完结动漫</span></div></div>
+
+<h4 id="2023-冬季完结"><a href="#2023-冬季完结" class="headerlink" title="2023 冬季完结"></a>2023 冬季完结</h4><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/2023年冬季完结动漫.jpg" data-src="../../img/媒体库使用指南/2023年冬季完结动漫.jpg" alt="2023年冬季完结动漫" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">2023年冬季完结动漫</span></div></div>
+
+<p>目前我想的是把以往年份的有趣的动漫都归档到本地以及云盘中，我个人有阿里云盘12T，Onedrive E5 开发者账号，也就是 25个子账户，每个账户 5T Onedrive</p>
+<p>现在的想法是本地和阿里云盘存一份热门动漫，在Onedrive 中尽量存储能获取的所有内容。</p>
+<p>如果你能够提供容灾的云盘空间或是有时间对媒体库进行整理下载，欢迎在 TG 联系我。</p>
+<h2 id="四、媒体库更新日志"><a href="#四、媒体库更新日志" class="headerlink" title="四、媒体库更新日志"></a>四、媒体库更新日志</h2><p>因为时间原因，更新图片大概一个月一次，请查看下面的索引</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 动画电影</span><br><span class="line"><span class="bullet">  -</span> 哪吒闹海 (1979) [TMDB:74037] [IMDB:tt0354770]</span><br><span class="line"><span class="bullet">  -</span> 风之谷 (1984) [TMDB:81] [IMDB:tt0087544]</span><br><span class="line"><span class="bullet">  -</span> 天空之城 (1986) [TMDB:10515] [IMDB:tt0092067]</span><br><span class="line"><span class="bullet">  -</span> 萤火虫之墓 (1988) [TMDB:12477] [IMDB:tt0095327]</span><br><span class="line"><span class="bullet">  -</span> 龙猫 (1988) [TMDB:8392] [IMDB:tt0096283]</span><br><span class="line"><span class="bullet">  -</span> 魔女宅急便 (1989) [TMDB:16859] [IMDB:tt0097814]</span><br><span class="line"><span class="bullet">  -</span> 狮子王 (1994) [TMDB:8587] [IMDB:tt0110357]</span><br><span class="line"><span class="bullet">  -</span> 侧耳倾听 (1995) [TMDB:37797] [IMDB:tt0113824]</span><br><span class="line"><span class="bullet">  -</span> 幽灵公主 (1997) [TMDB:128] [IMDB:tt0119698]</span><br><span class="line"><span class="bullet">  -</span> 未麻的部屋 (1998) [TMDB:10494] [IMDB:tt0156887]</span><br><span class="line"><span class="bullet">  -</span> 千与千寻 (2001) [TMDB:129] [IMDB:tt0245429]</span><br><span class="line"><span class="bullet">  -</span> 怪兽电力公司 (2001) [TMDB:585] [IMDB:tt0198781]</span><br><span class="line"><span class="bullet">  -</span> 冰川时代 (2002) [TMDB:425] [IMDB:tt0268380]</span><br><span class="line"><span class="bullet">  -</span> 东京教父 (2003) [TMDB:13398] [IMDB:tt0388473]</span><br><span class="line"><span class="bullet">  -</span> 哈尔的移动城堡 (2004) [TMDB:4935] [IMDB:tt0347149]</span><br><span class="line"><span class="bullet">  -</span> 穿越时空的少女 (2006) [TMDB:14069] [IMDB:tt0808506]</span><br><span class="line"><span class="bullet">  -</span> 红辣椒 (2006) [TMDB:4977] [IMDB:tt0851578]</span><br><span class="line"><span class="bullet">  -</span> 崖上的波妞 (2008) [TMDB:12429] [IMDB:tt0876563]</span><br><span class="line"><span class="bullet">  -</span> 机器人总动员 (2008) [TMDB:10681] [IMDB:tt0910970]</span><br><span class="line"><span class="bullet">  -</span> 玛丽和马克思 (2009) [TMDB:24238] [IMDB:tt0978762]</span><br><span class="line"><span class="bullet">  -</span> 飞屋环游记 (2009) [TMDB:14160] [IMDB:tt1049413]</span><br><span class="line"><span class="bullet">  -</span> 你看起来好像很好吃 (2010) [TMDB:89825] [IMDB:tt1734113]</span><br><span class="line"><span class="bullet">  -</span> 借东西的小人阿莉埃蒂 (2010) [TMDB:51739] [IMDB:tt1568921]</span><br><span class="line"><span class="bullet">  -</span> 玩具总动员3 (2010) [TMDB:10193] [IMDB:tt0435761]</span><br><span class="line"><span class="bullet">  -</span> 神偷奶爸 (2010) [TMDB:20352] [IMDB:tt1323594]</span><br><span class="line"><span class="bullet">  -</span> 驯龙高手 (2010) [TMDB:10191] [IMDB:tt0892769]</span><br><span class="line"><span class="bullet">  -</span> 萤火之森 (2011) [TMDB:92321] [IMDB:tt2061702]</span><br><span class="line"><span class="bullet">  -</span> 大闹天宫 (2012) [TMDB:145954] [IMDB:tt11941418]</span><br><span class="line"><span class="bullet">  -</span> 疯狂原始人 (2013) [TMDB:49519] [IMDB:tt0481499]</span><br><span class="line"><span class="bullet">  -</span> 超能陆战队 (2014) [TMDB:177572] [IMDB:tt2245084]</span><br><span class="line"><span class="bullet">  -</span> 头脑特工队 (2015) [TMDB:150540] [IMDB:tt2096673]</span><br><span class="line"><span class="bullet">  -</span> 你的名字。 (2016) [TMDB:372058] [IMDB:tt5311514]</span><br><span class="line"><span class="bullet">  -</span> 疯狂动物城 (2016) [TMDB:269149] [IMDB:tt2948356]</span><br><span class="line"><span class="bullet">-</span> 华语电影</span><br><span class="line"><span class="bullet">  -</span> 英雄本色 (1986) [TMDB:11471] [IMDB:tt0092263]</span><br><span class="line"><span class="bullet">  -</span> 倩女幽魂 (1987) [TMDB:30421] [IMDB:tt0093978]</span><br><span class="line"><span class="bullet">  -</span> 阿飞正传 (1990) [TMDB:18311] [IMDB:tt0101258]</span><br><span class="line"><span class="bullet">  -</span> 牯岭街少年杀人事件 (1991) [TMDB:15804] [IMDB:tt0101985]</span><br><span class="line"><span class="bullet">  -</span> 纵横四海 (1991) [TMDB:47423] [IMDB:tt0101020]</span><br><span class="line"><span class="bullet">  -</span> 新龙门客栈 (1992) [TMDB:40213] [IMDB:tt0105859]</span><br><span class="line"><span class="bullet">  -</span> 唐伯虎点秋香 (1993) [TMDB:37703] [IMDB:tt0108289]</span><br><span class="line"><span class="bullet">  -</span> 喜宴 (1993) [TMDB:9261] [IMDB:tt0107156]</span><br><span class="line"><span class="bullet">  -</span> 射雕英雄传之东成西就 (1993) [TMDB:55157] [IMDB:tt0108074]</span><br><span class="line"><span class="bullet">  -</span> 霸王别姬 (1993) [TMDB:10997] [IMDB:tt0106332]</span><br><span class="line"><span class="bullet">  -</span> 青蛇 (1993) [TMDB:39915] [IMDB:tt0106559]</span><br><span class="line"><span class="bullet">  -</span> 九品芝麻官 (1994) [TMDB:55156] [IMDB:tt0110201]</span><br><span class="line"><span class="bullet">  -</span> 活着 (1994) [TMDB:31439] [IMDB:tt0110081]</span><br><span class="line"><span class="bullet">  -</span> 背靠背，脸对脸 (1994) [TMDB:295279] [IMDB:tt0109235]</span><br><span class="line"><span class="bullet">  -</span> 重庆森林 (1994) [TMDB:11104] [IMDB:tt0109424]</span><br><span class="line"><span class="bullet">  -</span> 阳光灿烂的日子 (1994) [TMDB:161285] [IMDB:tt0111786]</span><br><span class="line"><span class="bullet">  -</span> 饮食男女 (1994) [TMDB:10451] [IMDB:tt0111797]</span><br><span class="line"><span class="bullet">  -</span> 大话西游之月光宝盒 (1995) [TMDB:13345] [IMDB:tt0112778]</span><br><span class="line"><span class="bullet">  -</span> 大话西游之月光宝盒 (1995) [TMDB:13345] [IMDB:tt0112778]</span><br><span class="line"><span class="bullet">  -</span> 甜蜜蜜 (1996) [TMDB:37185] [IMDB:tt0117905]</span><br><span class="line"><span class="bullet">  -</span> 春光乍泄 (1997) [TMDB:18329] [IMDB:tt0118845]</span><br><span class="line"><span class="bullet">  -</span> 一一 (2000) [TMDB:25538] [IMDB:tt0244316]</span><br><span class="line"><span class="bullet">  -</span> 花样年华 (2000) [TMDB:843] [IMDB:tt0118694]</span><br><span class="line"><span class="bullet">  -</span> 鬼子来了 (2001) [TMDB:25838] [IMDB:tt0245929]</span><br><span class="line"><span class="bullet">  -</span> 无间道 (2002) [TMDB:10775] [IMDB:tt0338564]</span><br><span class="line"><span class="bullet">  -</span> 无间道2 (2003) [TMDB:11647] [IMDB:tt0369060]</span><br><span class="line"><span class="bullet">  -</span> 功夫 (2004) [TMDB:9470] [IMDB:tt0373074]</span><br><span class="line"><span class="bullet">  -</span> 可可西里 (2004) [TMDB:16074] [IMDB:tt0386651]</span><br><span class="line"><span class="bullet">  -</span> 疯狂的石头 (2006) [TMDB:45380] [IMDB:tt0843270]</span><br><span class="line"><span class="bullet">  -</span> 色·戒 (2007) [TMDB:4588] [IMDB:tt0808357]</span><br><span class="line"><span class="bullet">  -</span> 东邪西毒：终极版 (2009) [TMDB:1241825]</span><br><span class="line"><span class="bullet">  -</span> 岁月神偷 (2010) [TMDB:39693] [IMDB:tt1602572]</span><br><span class="line"><span class="bullet">  -</span> 让子弹飞 (2010) [TMDB:51533] [IMDB:tt1533117]</span><br><span class="line"><span class="bullet">  -</span> 心迷宫 (2014) [TMDB:292362] [IMDB:tt4078856]</span><br><span class="line"><span class="bullet">  -</span> 驴得水 (2016) [TMDB:421742] [IMDB:tt6167014]</span><br><span class="line"><span class="bullet">  -</span> 大佛普拉斯 (2017) [TMDB:475149] [IMDB:tt7010412]</span><br><span class="line"><span class="bullet">  -</span> 我不是药神 (2018) [TMDB:532753] [IMDB:tt7362036]</span><br><span class="line"><span class="bullet">  -</span> 飞驰人生 (2019) [TMDB:575219] [IMDB:tt9597190]</span><br><span class="line"><span class="bullet">  -</span> 三大队 (2023) [TMDB:1109586] [IMDB:tt28212677]</span><br><span class="line"><span class="bullet">  -</span> 年会不能停！ (2023) [TMDB:1173076] [IMDB:tt27922369]</span><br><span class="line"><span class="bullet">-</span> 国产剧</span><br><span class="line"><span class="bullet">  -</span> 唐人街探案2 (1) [TMDB:247773] [IMDB:tt22475188]</span><br><span class="line"><span class="bullet">  -</span> 射雕英雄传 (1983) [TMDB:104] [IMDB:tt0274839]</span><br><span class="line"><span class="bullet">  -</span> 红楼梦 (1987) [TMDB:7191] [IMDB:tt1162595]</span><br><span class="line"><span class="bullet">  -</span> 三国演义 (1994) [TMDB:72645] [IMDB:tt0108914]</span><br><span class="line"><span class="bullet">  -</span> 水浒传 (1998) [TMDB:78132] [IMDB:tt1388431]</span><br><span class="line"><span class="bullet">  -</span> 狂飙 (2023) [TMDB:210757] [IMDB:tt26235088]</span><br><span class="line"><span class="bullet">  -</span> 猎冰 (2024) [TMDB:233958]</span><br><span class="line"><span class="bullet">-</span> 外语电影</span><br><span class="line"><span class="bullet">  -</span> 城市之光 (1931) [TMDB:901] [IMDB:tt0021749]</span><br><span class="line"><span class="bullet">  -</span> 摩登时代 (1936) [TMDB:3082] [IMDB:tt0027977]</span><br><span class="line"><span class="bullet">  -</span> 乱世佳人 (1939) [TMDB:770] [IMDB:tt0031381]</span><br><span class="line"><span class="bullet">  -</span> 魂断蓝桥 (1940) [TMDB:43824] [IMDB:tt0033238]</span><br><span class="line"><span class="bullet">  -</span> 罗生门 (1950) [TMDB:548] [IMDB:tt0042876]</span><br><span class="line"><span class="bullet">  -</span> 雨中曲 (1952) [TMDB:872] [IMDB:tt0045152]</span><br><span class="line"><span class="bullet">  -</span> 罗马假日 (1953) [TMDB:804] [IMDB:tt0046250]</span><br><span class="line"><span class="bullet">  -</span> 七武士 (1954) [TMDB:346] [IMDB:tt0047478]</span><br><span class="line"><span class="bullet">  -</span> 十二怒汉 (1957) [TMDB:389] [IMDB:tt0050083]</span><br><span class="line"><span class="bullet">  -</span> 控方证人 (1957) [TMDB:37257] [IMDB:tt0051201]</span><br><span class="line"><span class="bullet">  -</span> 惊魂记 (1960) [TMDB:539] [IMDB:tt0054215]</span><br><span class="line"><span class="bullet">  -</span> 虎口脱险 (1966) [TMDB:8290] [IMDB:tt0060474]</span><br><span class="line"><span class="bullet">  -</span> 2001太空漫游 (1968) [TMDB:62] [IMDB:tt0062622]</span><br><span class="line"><span class="bullet">  -</span> 教父 (1972) [TMDB:238] [IMDB:tt0068646]</span><br><span class="line"><span class="bullet">  -</span> 飞越疯人院 (1975) [TMDB:510] [IMDB:tt0073486]</span><br><span class="line"><span class="bullet">  -</span> 美国往事 (1984) [TMDB:311] [IMDB:tt0087843]</span><br><span class="line"><span class="bullet">  -</span> 忠犬八公物语 (1987) [TMDB:31743] [IMDB:tt0093132]</span><br><span class="line"><span class="bullet">  -</span> 末代皇帝 (1987) [TMDB:746] [IMDB:tt0093389]</span><br><span class="line"><span class="bullet">  -</span> 天堂电影院 (1988) [TMDB:11216] [IMDB:tt0095765]</span><br><span class="line"><span class="bullet">  -</span> 雨人 (1988) [TMDB:380] [IMDB:tt0095953]</span><br><span class="line"><span class="bullet">  -</span> 死亡诗社 (1989) [TMDB:207] [IMDB:tt0097165]</span><br><span class="line"><span class="bullet">  -</span> 沉默的羔羊 (1991) [TMDB:274] [IMDB:tt0102926]</span><br><span class="line"><span class="bullet">  -</span> 终结者2：审判日 (1991) [TMDB:280] [IMDB:tt0103064]</span><br><span class="line"><span class="bullet">  -</span> 闻香识女人 (1992) [TMDB:9475] [IMDB:tt0105323]</span><br><span class="line"><span class="bullet">  -</span> 完美的世界 (1993) [TMDB:9559] [IMDB:tt0107808]</span><br><span class="line"><span class="bullet">  -</span> 辛德勒的名单 (1993) [TMDB:424] [IMDB:tt0108052]</span><br><span class="line"><span class="bullet">  -</span> 低俗小说 (1994) [TMDB:680] [IMDB:tt0110912]</span><br><span class="line"><span class="bullet">  -</span> 燃情岁月 (1994) [TMDB:4476] [IMDB:tt0110322]</span><br><span class="line"><span class="bullet">  -</span> 肖申克的救赎 (1994) [TMDB:278] [IMDB:tt0111161]</span><br><span class="line"><span class="bullet">  -</span> 这个杀手不太冷 (1994) [TMDB:101] [IMDB:tt0110413]</span><br><span class="line"><span class="bullet">  -</span> 阿甘正传 (1994) [TMDB:13] [IMDB:tt0109830]</span><br><span class="line"><span class="bullet">  -</span> 七宗罪 (1995) [TMDB:807] [IMDB:tt0114369]</span><br><span class="line"><span class="bullet">  -</span> 勇敢的心 (1995) [TMDB:197] [IMDB:tt0112573]</span><br><span class="line"><span class="bullet">  -</span> 情书 (1995) [TMDB:47002] [IMDB:tt0113703]</span><br><span class="line"><span class="bullet">  -</span> 爱在黎明破晓前 (1995) [TMDB:76] [IMDB:tt0112471]</span><br><span class="line"><span class="bullet">  -</span> 猜火车 (1996) [TMDB:627] [IMDB:tt0117951]</span><br><span class="line"><span class="bullet">  -</span> 千钧一发 (1997) [TMDB:782] [IMDB:tt0119177]</span><br><span class="line"><span class="bullet">  -</span> 小鞋子 (1997) [TMDB:21334] [IMDB:tt0118849]</span><br><span class="line"><span class="bullet">  -</span> 心灵捕手 (1997) [TMDB:489] [IMDB:tt0119217]</span><br><span class="line"><span class="bullet">  -</span> 泰坦尼克号 (1997) [TMDB:597] [IMDB:tt0120338]</span><br><span class="line"><span class="bullet">  -</span> 美丽人生 (1997) [TMDB:637] [IMDB:tt0118799]</span><br><span class="line"><span class="bullet">  -</span> 拯救大兵瑞恩 (1998) [TMDB:857] [IMDB:tt0120815]</span><br><span class="line"><span class="bullet">  -</span> 搏击俱乐部 (1999) [TMDB:550] [IMDB:tt0137523]</span><br><span class="line"><span class="bullet">  -</span> 第六感 (1999) [TMDB:745] [IMDB:tt0167404]</span><br><span class="line"><span class="bullet">  -</span> 绿里奇迹 (1999) [TMDB:497] [IMDB:tt0120689]</span><br><span class="line"><span class="bullet">  -</span> 菊次郎的夏天 (1999) [TMDB:4291] [IMDB:tt0199683]</span><br><span class="line"><span class="bullet">  -</span> 黑客帝国 (1999) [TMDB:603] [IMDB:tt0133093]</span><br><span class="line"><span class="bullet">  -</span> 西西里的美丽传说 (2000) [TMDB:10867] [IMDB:tt0213847]</span><br><span class="line"><span class="bullet">  -</span> 记忆碎片 (2000) [TMDB:77] [IMDB:tt0209144]</span><br><span class="line"><span class="bullet">  -</span> 人工智能 (2001) [TMDB:644] [IMDB:tt0212720]</span><br><span class="line"><span class="bullet">  -</span> 哈利·波特与魔法石 (2001) [TMDB:671] [IMDB:tt0241527]</span><br><span class="line"><span class="bullet">  -</span> 天使爱美丽 (2001) [TMDB:194] [IMDB:tt0211915]</span><br><span class="line"><span class="bullet">  -</span> 我是山姆 (2001) [TMDB:10950] [IMDB:tt0277027]</span><br><span class="line"><span class="bullet">  -</span> 指环王1：护戒使者 (2001) [TMDB:120] [IMDB:tt0120737]</span><br><span class="line"><span class="bullet">  -</span> 美丽心灵 (2001) [TMDB:453] [IMDB:tt0268978]</span><br><span class="line"><span class="bullet">  -</span> 上帝之城 (2002) [TMDB:598] [IMDB:tt0317248]</span><br><span class="line"><span class="bullet">  -</span> 哈利·波特与密室 (2002) [TMDB:672] [IMDB:tt0295297]</span><br><span class="line"><span class="bullet">  -</span> 指环王2：双塔奇兵 (2002) [TMDB:121] [IMDB:tt0167261]</span><br><span class="line"><span class="bullet">  -</span> 猫鼠游戏 (2002) [TMDB:640] [IMDB:tt0264464]</span><br><span class="line"><span class="bullet">  -</span> 谍影重重 (2002) [TMDB:2501] [IMDB:tt0258463]</span><br><span class="line"><span class="bullet">  -</span> 钢琴家 (2002) [TMDB:423] [IMDB:tt0253474]</span><br><span class="line"><span class="bullet">  -</span> 加勒比海盗1：黑珍珠号的诅咒 (2003) [TMDB:22] [IMDB:tt0325980]</span><br><span class="line"><span class="bullet">  -</span> 大鱼 (2003) [TMDB:587] [IMDB:tt0319061]</span><br><span class="line"><span class="bullet">  -</span> 指环王3：王者无敌 (2003) [TMDB:122] [IMDB:tt0167260]</span><br><span class="line"><span class="bullet">  -</span> 杀人回忆 (2003) [TMDB:11423] [IMDB:tt0353969]</span><br><span class="line"><span class="bullet">  -</span> 真爱至上 (2003) [TMDB:508] [IMDB:tt0314331]</span><br><span class="line"><span class="bullet">  -</span> 致命ID (2003) [TMDB:2832] [IMDB:tt0309698]</span><br><span class="line"><span class="bullet">  -</span> 黑客帝国2：重装上阵 (2003) [TMDB:604] [IMDB:tt0234215]</span><br><span class="line"><span class="bullet">  -</span> 黑客帝国3：矩阵革命 (2003) [TMDB:605] [IMDB:tt0242653]</span><br><span class="line"><span class="bullet">  -</span> 卢旺达饭店 (2004) [TMDB:205] [IMDB:tt0395169]</span><br><span class="line"><span class="bullet">  -</span> 哈利·波特与阿兹卡班的囚徒 (2004) [TMDB:673] [IMDB:tt0304141]</span><br><span class="line"><span class="bullet">  -</span> 幸福终点站 (2004) [TMDB:594] [IMDB:tt0362227]</span><br><span class="line"><span class="bullet">  -</span> 恋恋笔记本 (2004) [TMDB:11036] [IMDB:tt0332280]</span><br><span class="line"><span class="bullet">  -</span> 放牛班的春天 (2004) [TMDB:5528] [IMDB:tt0372824]</span><br><span class="line"><span class="bullet">  -</span> 无人知晓 (2004) [TMDB:2517] [IMDB:tt0408664]</span><br><span class="line"><span class="bullet">  -</span> 爱在日落黄昏时 (2004) [TMDB:80] [IMDB:tt0381681]</span><br><span class="line"><span class="bullet">  -</span> 电锯惊魂 (2004) [TMDB:176] [IMDB:tt0387564]</span><br><span class="line"><span class="bullet">  -</span> 蝴蝶效应 (2004) [TMDB:1954] [IMDB:tt0289879]</span><br><span class="line"><span class="bullet">  -</span> 谍影重重2 (2004) [TMDB:2502] [IMDB:tt0372183]</span><br><span class="line"><span class="bullet">  -</span> 傲慢与偏见 (2005) [TMDB:4348] [IMDB:tt0414387]</span><br><span class="line"><span class="bullet">  -</span> 哈利·波特与火焰杯 (2005) [TMDB:674] [IMDB:tt0330373]</span><br><span class="line"><span class="bullet">  -</span> 战争之王 (2005) [TMDB:1830] [IMDB:tt0399295]</span><br><span class="line"><span class="bullet">  -</span> 断背山 (2005) [TMDB:142] [IMDB:tt0388795]</span><br><span class="line"><span class="bullet">  -</span> 当幸福来敲门 (2006) [TMDB:1402] [IMDB:tt0454921]</span><br><span class="line"><span class="bullet">  -</span> 窃听风暴 (2006) [TMDB:582] [IMDB:tt0405094]</span><br><span class="line"><span class="bullet">  -</span> 致命魔术 (2006) [TMDB:1124] [IMDB:tt0482571]</span><br><span class="line"><span class="bullet">  -</span> 血钻 (2006) [TMDB:1372] [IMDB:tt0450259]</span><br><span class="line"><span class="bullet">  -</span> 香水 (2006) [TMDB:1427] [IMDB:tt0396171]</span><br><span class="line"><span class="bullet">  -</span> 地球上的星星 (2007) [TMDB:7508] [IMDB:tt0986264]</span><br><span class="line"><span class="bullet">  -</span> 谍影重重3 (2007) [TMDB:2503] [IMDB:tt0440963]</span><br><span class="line"><span class="bullet">  -</span> 遗愿清单 (2007) [TMDB:7350] [IMDB:tt0825232]</span><br><span class="line"><span class="bullet">  -</span> 入殓师 (2008) [TMDB:16804] [IMDB:tt1069238]</span><br><span class="line"><span class="bullet">  -</span> 朗读者 (2008) [TMDB:8055] [IMDB:tt0976051]</span><br><span class="line"><span class="bullet">  -</span> 本杰明·巴顿奇事 (2008) [TMDB:4922] [IMDB:tt0421715]</span><br><span class="line"><span class="bullet">  -</span> 步履不停 (2008) [TMDB:25050] [IMDB:tt1087578]</span><br><span class="line"><span class="bullet">  -</span> 浪潮 (2008) [TMDB:7735] [IMDB:tt1063669]</span><br><span class="line"><span class="bullet">  -</span> 穿条纹睡衣的男孩 (2008) [TMDB:14574] [IMDB:tt0914798]</span><br><span class="line"><span class="bullet">  -</span> 蝙蝠侠：黑暗骑士 (2008) [TMDB:155] [IMDB:tt0468569]</span><br><span class="line"><span class="bullet">  -</span> 贫民窟的百万富翁 (2008) [TMDB:12405] [IMDB:tt1010048]</span><br><span class="line"><span class="bullet">  -</span> 三傻大闹宝莱坞 (2009) [TMDB:20453] [IMDB:tt1187043]</span><br><span class="line"><span class="bullet">  -</span> 恐怖游轮 (2009) [TMDB:26466] [IMDB:tt1187064]</span><br><span class="line"><span class="bullet">  -</span> 无耻混蛋 (2009) [TMDB:16869] [IMDB:tt0361748]</span><br><span class="line"><span class="bullet">  -</span> 阿凡达 (2009) [TMDB:19995] [IMDB:tt0499549]</span><br><span class="line"><span class="bullet">  -</span> 告白 (2010) [TMDB:54186] [IMDB:tt1590089]</span><br><span class="line"><span class="bullet">  -</span> 怦然心动 (2010) [TMDB:43949] [IMDB:tt0817177]</span><br><span class="line"><span class="bullet">  -</span> 盗梦空间 (2010) [TMDB:27205] [IMDB:tt1375666]</span><br><span class="line"><span class="bullet">  -</span> 禁闭岛 (2010) [TMDB:11324] [IMDB:tt1130884]</span><br><span class="line"><span class="bullet">  -</span> 黑天鹅 (2010) [TMDB:44214] [IMDB:tt0947798]</span><br><span class="line"><span class="bullet">  -</span> 哈利·波特与死亡圣器(下) (2011) [TMDB:12445] [IMDB:tt1201607]</span><br><span class="line"><span class="bullet">  -</span> 我爱你 (2011) [TMDB:72575] [IMDB:tt1862020]</span><br><span class="line"><span class="bullet">  -</span> 源代码 (2011) [TMDB:45612] [IMDB:tt0945513]</span><br><span class="line"><span class="bullet">  -</span> 熔炉 (2011) [TMDB:81481] [IMDB:tt2070649]</span><br><span class="line"><span class="bullet">  -</span> 触不可及 (2011) [TMDB:77338] [IMDB:tt1675434]</span><br><span class="line"><span class="bullet">  -</span> 超脱 (2011) [TMDB:74308] [IMDB:tt1683526]</span><br><span class="line"><span class="bullet">  -</span> 3 (2012) [TMDB:79660] [IMDB:tt2123129]</span><br><span class="line"><span class="bullet">  -</span> 少年派的奇幻漂流 (2012) [TMDB:87827] [IMDB:tt0454876]</span><br><span class="line"><span class="bullet">  -</span> 蝙蝠侠：黑暗骑士崛起 (2012) [TMDB:49026] [IMDB:tt1345836]</span><br><span class="line"><span class="bullet">  -</span> 被解救的姜戈 (2012) [TMDB:68718] [IMDB:tt1853728]</span><br><span class="line"><span class="bullet">  -</span> 七号房的礼物 (2013) [TMDB:158445] [IMDB:tt2659414]</span><br><span class="line"><span class="bullet">  -</span> 彗星来的那一夜 (2013) [TMDB:220289] [IMDB:tt2866360]</span><br><span class="line"><span class="bullet">  -</span> 恐怖直播 (2013) [TMDB:209764] [IMDB:tt2990738]</span><br><span class="line"><span class="bullet">  -</span> 新世界 (2013) [TMDB:165213] [IMDB:tt2625030]</span><br><span class="line"><span class="bullet">  -</span> 时空恋旅人 (2013) [TMDB:122906] [IMDB:tt2194499]</span><br><span class="line"><span class="bullet">  -</span> 爱在午夜降临前 (2013) [TMDB:132344] [IMDB:tt2209418]</span><br><span class="line"><span class="bullet">  -</span> 素媛 (2013) [TMDB:255709] [IMDB:tt3153634]</span><br><span class="line"><span class="bullet">  -</span> 辩护人 (2013) [TMDB:242452] [IMDB:tt3404140]</span><br><span class="line"><span class="bullet">  -</span> 达拉斯买家俱乐部 (2013) [TMDB:152532] [IMDB:tt0790636]</span><br><span class="line"><span class="bullet">  -</span> 2 (2014) [TMDB:480682] [IMDB:tt3529830]</span><br><span class="line"><span class="bullet">  -</span> 小森林：夏秋篇 (2014) [TMDB:294682] [IMDB:tt3474600]</span><br><span class="line"><span class="bullet">  -</span> 布达佩斯大饭店 (2014) [TMDB:120467] [IMDB:tt2278388]</span><br><span class="line"><span class="bullet">  -</span> 星际穿越 (2014) [TMDB:157336] [IMDB:tt0816692]</span><br><span class="line"><span class="bullet">  -</span> 模仿游戏 (2014) [TMDB:205596] [IMDB:tt2084970]</span><br><span class="line"><span class="bullet">  -</span> 消失的爱人 (2014) [TMDB:210577] [IMDB:tt2267998]</span><br><span class="line"><span class="bullet">  -</span> 荒蛮故事 (2014) [TMDB:265195] [IMDB:tt3011894]</span><br><span class="line"><span class="bullet">  -</span> 一个叫欧维的男人决定去死 (2015) [TMDB:348678] [IMDB:tt4080728]</span><br><span class="line"><span class="bullet">  -</span> 小森林：冬春篇 (2015) [TMDB:336026] [IMDB:tt3474602]</span><br><span class="line"><span class="bullet">  -</span> 小萝莉的猴神大叔 (2015) [TMDB:348892] [IMDB:tt3863552]</span><br><span class="line"><span class="bullet">  -</span> 房间 (2015) [TMDB:264644] [IMDB:tt3170832]</span><br><span class="line"><span class="bullet">  -</span> 海蒂和爷爷 (2015) [TMDB:365045] [IMDB:tt3700392]</span><br><span class="line"><span class="bullet">  -</span> 海街日记 (2015) [TMDB:315846] [IMDB:tt3756788]</span><br><span class="line"><span class="bullet">  -</span> 火星救援 (2015) [TMDB:286217] [IMDB:tt3659388]</span><br><span class="line"><span class="bullet">  -</span> 疯狂的麦克斯4：狂暴之路 (2015) [TMDB:76341] [IMDB:tt1392190]</span><br><span class="line"><span class="bullet">  -</span> 聚焦 (2015) [TMDB:314365] [IMDB:tt1895587]</span><br><span class="line"><span class="bullet">  -</span> 完美陌生人 (2016) [TMDB:381341] [IMDB:tt4901306]</span><br><span class="line"><span class="bullet">  -</span> 摔跤吧！爸爸 (2016) [TMDB:360814] [IMDB:tt5074352]</span><br><span class="line"><span class="bullet">  -</span> 海边的曼彻斯特 (2016) [TMDB:334541] [IMDB:tt4034228]</span><br><span class="line"><span class="bullet">  -</span> 血战钢锯岭 (2016) [TMDB:324786] [IMDB:tt2119532]</span><br><span class="line"><span class="bullet">  -</span> 釜山行 (2016) [TMDB:396535] [IMDB:tt5700672]</span><br><span class="line"><span class="bullet">  -</span> 三块广告牌 (2017) [TMDB:359940] [IMDB:tt5027774]</span><br><span class="line"><span class="bullet">  -</span> 奇迹男孩 (2017) [TMDB:406997] [IMDB:tt2543472]</span><br><span class="line"><span class="bullet">  -</span> 看不见的客人 (2017) [TMDB:411088] [IMDB:tt4857264]</span><br><span class="line"><span class="bullet">  -</span> 请以你的名字呼唤我 (2017) [TMDB:398818] [IMDB:tt5726616]</span><br><span class="line"><span class="bullet">  -</span> 何以为家 (2018) [TMDB:517814] [IMDB:tt8267604]</span><br><span class="line"><span class="bullet">  -</span> 头号玩家 (2018) [TMDB:333339] [IMDB:tt1677720]</span><br><span class="line"><span class="bullet">  -</span> 小偷家族 (2018) [TMDB:505192] [IMDB:tt8075192]</span><br><span class="line"><span class="bullet">  -</span> 绿皮书 (2018) [TMDB:490132] [IMDB:tt6966692]</span><br><span class="line"><span class="bullet">  -</span> 阳光姐妹淘 (2018) [TMDB:517065] [IMDB:tt7493818]</span><br><span class="line"><span class="bullet">  -</span> 小丑 (2019) [TMDB:475557] [IMDB:tt7286456]</span><br><span class="line"><span class="bullet">-</span> 新番</span><br><span class="line"><span class="bullet">  -</span> 小不点 (1983) [TMDB:17400] [IMDB:tt0320055]</span><br><span class="line"><span class="bullet">  -</span> 青之驱魔师 (2011) [TMDB:38464] [IMDB:tt1799631]</span><br><span class="line"><span class="bullet">  -</span> 王者天下 (2012) [TMDB:46437] [IMDB:tt2404499]</span><br><span class="line"><span class="bullet">  -</span> 暗芝居 (2013) [TMDB:56559] [IMDB:tt3111906]</span><br><span class="line"><span class="bullet">  -</span> 欢迎来到实力至上主义的教室 (2017) [TMDB:72517] [IMDB:tt7263328]</span><br><span class="line"><span class="bullet">  -</span> 足球小将 (2018) [TMDB:77240] [IMDB:tt7784442]</span><br><span class="line"><span class="bullet">  -</span> 卡片战斗先导者overDress (2021) [TMDB:106301] [IMDB:tt13872472]</span><br><span class="line"><span class="bullet">  -</span> 弱势角色友崎君 (2021) [TMDB:99083] [IMDB:tt13103028]</span><br><span class="line"><span class="bullet">  -</span> 我被逐出队伍后过上慢生活 (2021) [TMDB:113256] [IMDB:tt13483212]</span><br><span class="line"><span class="bullet">  -</span> 月光下的异世界之旅 (2021) [TMDB:111819] [IMDB:tt13311344]</span><br><span class="line"><span class="bullet">  -</span> 新 福星小子 (2022) [TMDB:154524] [IMDB:tt16764368]</span><br><span class="line"><span class="bullet">  -</span> 不死不幸 (2023) [TMDB:209077] [IMDB:tt21927720]</span><br><span class="line"><span class="bullet">  -</span> 奇异贤伴 黑色天使 (2023) [TMDB:210181] [IMDB:tt24240038]</span><br><span class="line"><span class="bullet">  -</span> 广阔天空！光之美少女 (2023) [TMDB:213883] [IMDB:tt23862502]</span><br><span class="line"><span class="bullet">  -</span> 我心里危险的东西 (2023) [TMDB:207250] [IMDB:tt21423786]</span><br><span class="line"><span class="bullet">  -</span> 烈焰先锋：救国的橘衣消防员 (2023) [TMDB:223780] [IMDB:tt29201691]</span><br><span class="line"><span class="bullet">  -</span> 爱犬指令 (2023) [TMDB:229613]</span><br><span class="line"><span class="bullet">  -</span> 物理魔法使-马修- (2023) [TMDB:204832] [IMDB:tt21209804]</span><br><span class="line"><span class="bullet">  -</span> 狩火之王 (2023) [TMDB:156688] [IMDB:tt21912036]</span><br><span class="line"><span class="bullet">  -</span> 狩龙人拉格纳 (2023) [TMDB:195459] [IMDB:tt28685470]</span><br><span class="line"><span class="bullet">  -</span> 至高之牌 (2023) [TMDB:194665] [IMDB:tt25275610]</span><br><span class="line"><span class="bullet">  -</span> 药屋少女的呢喃 (2023) [TMDB:220542] [IMDB:tt26743760]</span><br><span class="line"><span class="bullet">  -</span> 葬送的芙莉莲 (2023) [TMDB:209867] [IMDB:tt22248376]</span><br><span class="line"><span class="bullet">  -</span> 逃走中 THE GREAT MISSION (2023) [TMDB:217388]</span><br><span class="line"><span class="bullet">  -</span> 香格里拉边境 (2023) [TMDB:205050] [IMDB:tt28776190]</span><br><span class="line"><span class="bullet">  -</span> Wonderful 光之美少女！ (2024) [TMDB:243216] [IMDB:tt30608459]</span><br><span class="line"><span class="bullet">  -</span> 为了在异世界也能抚摸毛茸茸而努力。 (2024) [TMDB:205672] [IMDB:tt30689225]</span><br><span class="line"><span class="bullet">  -</span> 事与愿违的不死冒险者 (2024) [TMDB:197848] [IMDB:tt30177477]</span><br><span class="line"><span class="bullet">  -</span> 休假日的坏人先生 (2024) [TMDB:222784] [IMDB:tt29467317]</span><br><span class="line"><span class="bullet">  -</span> 佐佐木与文鸟小哔 (2024) [TMDB:206630] [IMDB:tt27524116]</span><br><span class="line"><span class="bullet">  -</span> 公主殿下“拷问”的时间到了 (2024) [TMDB:229443] [IMDB:tt30643998]</span><br><span class="line"><span class="bullet">  -</span> 到了30岁还是处男，似乎会变成魔法师 (2024) [TMDB:237045] [IMDB:tt28369144]</span><br><span class="line"><span class="bullet">  -</span> 勇气爆发BangBravern (2024) [TMDB:238846] [IMDB:tt30975941]</span><br><span class="line"><span class="bullet">  -</span> 北海道辣妹贼拉可爱 (2024) [TMDB:213181] [IMDB:tt23029874]</span><br><span class="line"><span class="bullet">  -</span> 反派大小姐等级99～我是隐藏BOSS但不是魔王～ (2024) [TMDB:222930] [IMDB:tt30495119]</span><br><span class="line"><span class="bullet">  -</span> 外科医生爱丽丝 (2024) [TMDB:221310] [IMDB:tt28247170]</span><br><span class="line"><span class="bullet">  -</span> 婚戒物语 (2024) [TMDB:218493] [IMDB:tt30488398]</span><br><span class="line"><span class="bullet">  -</span> 异世界温泉开拓记 (2024) [TMDB:241021] [IMDB:tt30644058]</span><br><span class="line"><span class="bullet">  -</span> 异修罗 (2024) [TMDB:220286] [IMDB:tt26713948]</span><br><span class="line"><span class="bullet">  -</span> 愚蠢天使与恶魔共舞 (2024) [TMDB:231357] [IMDB:tt30495098]</span><br><span class="line"><span class="bullet">  -</span> 憧憬成为魔法少女 (2024) [TMDB:236338] [IMDB:tt29605390]</span><br><span class="line"><span class="bullet">  -</span> 我独自升级 (2024) [TMDB:127532] [IMDB:tt21209876]</span><br><span class="line"><span class="bullet">  -</span> 战国妖狐 (2024) [TMDB:234995] [IMDB:tt30325850]</span><br><span class="line"><span class="bullet">  -</span> 指尖相触，恋恋不舍 (2024) [TMDB:230059] [IMDB:tt30024091]</span><br><span class="line"><span class="bullet">  -</span> 挣扎吧，亚当 (2024) [TMDB:241002]</span><br><span class="line"><span class="bullet">  -</span> 无人能敌 (2024) [TMDB:226905] [IMDB:tt28454318]</span><br><span class="line"><span class="bullet">  -</span> 明治击剑－1874－ (2024) [TMDB:99787] [IMDB:tt30495035]</span><br><span class="line"><span class="bullet">  -</span> 最弱的驯养师开启的捡垃圾的旅途 (2024) [TMDB:214310] [IMDB:tt30644010]</span><br><span class="line"><span class="bullet">  -</span> 最强肉盾的迷宫攻略～拥有稀少技能体力9999的肉盾，被勇者队伍辞退了～ (2024) [TMDB:236532] [IMDB:tt30643971]</span><br><span class="line"><span class="bullet">  -</span> 月刊妄想科学 (2024) [TMDB:236142] [IMDB:tt30494894]</span><br><span class="line"><span class="bullet">  -</span> 治愈魔法的错误使用方法 (2024) [TMDB:131365] [IMDB:tt15237152]</span><br><span class="line"><span class="bullet">  -</span> 百千家的妖怪王子 (2024) [TMDB:230823] [IMDB:tt30691068]</span><br><span class="line"><span class="bullet">  -</span> 碰之道 (2024) [TMDB:234176] [IMDB:tt31309480]</span><br><span class="line"><span class="bullet">  -</span> 秒杀外挂太强了，异世界的家伙们根本就不是对手。 (2024) [TMDB:236144] [IMDB:tt30146725]</span><br><span class="line"><span class="bullet">  -</span> 轮回七次的恶役千金在前敌国享受随心所欲的新婚生活 (2024) [TMDB:232926] [IMDB:tt28685624]</span><br><span class="line"><span class="bullet">  -</span> 迷宫饭 (2024) [TMDB:207784] [IMDB:tt21621494]</span><br><span class="line"><span class="bullet">  -</span> 金属口红 (2024) [TMDB:222787] [IMDB:tt29510641]</span><br><span class="line"><span class="bullet">  -</span> 零食八江 (2024) [TMDB:236930] [IMDB:tt29474142]</span><br><span class="line"><span class="bullet">  -</span> 魔女与野兽 (2024) [TMDB:208445] [IMDB:tt30089363]</span><br><span class="line"><span class="bullet">  -</span> 魔都精兵的奴隶 (2024) [TMDB:139060] [IMDB:tt16156736]</span><br><span class="line"><span class="bullet">-</span> 演唱会</span><br><span class="line"><span class="bullet">  -</span> 音乐之声 (1965) [TMDB:15121] [IMDB:tt0059742]</span><br><span class="line"><span class="bullet">  -</span> 海上钢琴师 (1998) [TMDB:10376] [IMDB:tt0120731]</span><br><span class="line"><span class="bullet">  -</span> 千年女优：轨迹 (2001) [TMDB:968100]</span><br><span class="line"><span class="bullet">  -</span> 被嫌弃的松子的一生 (2006) [TMDB:31512] [IMDB:tt0768120]</span><br><span class="line"><span class="bullet">  -</span> 海豚湾 (2009) [TMDB:23128] [IMDB:tt1313104]</span><br><span class="line"><span class="bullet">  -</span> 海洋 (2010) [TMDB:36970] [IMDB:tt0765128]</span><br><span class="line"><span class="bullet">  -</span> 再次出发之纽约遇见你 (2013) [TMDB:198277] [IMDB:tt1980929]</span><br><span class="line"><span class="bullet">  -</span> 爆裂鼓手 (2014) [TMDB:244786] [IMDB:tt2582802]</span><br><span class="line"><span class="bullet">  -</span> 爱乐之城 (2016) [TMDB:313369] [IMDB:tt3783958]</span><br><span class="line"><span class="bullet">  -</span> 二十二 (2017) [TMDB:473267] [IMDB:tt3843282]</span><br><span class="line"><span class="bullet">  -</span> 寻梦环游记 (2017) [TMDB:354912] [IMDB:tt2380307]</span><br><span class="line"><span class="bullet">  -</span> 波西米亚狂想曲 (2018) [TMDB:424694] [IMDB:tt1727824]</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-国产剧"><a href="#1-国产剧" class="headerlink" title="1. 国产剧"></a>1. 国产剧</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240318162248208.jpg" data-src="../../img/媒体库使用指南/image-20240318162248208.jpg" alt="image-20240318162248208" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240318162248208</span></div></div>
+
+<h3 id="2-日韩剧"><a href="#2-日韩剧" class="headerlink" title="2. 日韩剧"></a>2. 日韩剧</h3><p>暂无</p>
+<h3 id="3-外语电影"><a href="#3-外语电影" class="headerlink" title="3. 外语电影"></a>3. 外语电影</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240318162441339.jpg" data-src="../../img/媒体库使用指南/image-20240318162441339.jpg" alt="image-20240318162441339" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240318162441339</span></div></div>
+
+<h3 id="4-华语电影"><a href="#4-华语电影" class="headerlink" title="4. 华语电影"></a>4. 华语电影</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240318162226440.jpg" data-src="../../img/媒体库使用指南/image-20240318162226440.jpg" alt="image-20240318162226440" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240318162226440</span></div></div>
+
+<h3 id="5-动画电影"><a href="#5-动画电影" class="headerlink" title="5. 动画电影"></a>5. 动画电影</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240318161717332.jpg" data-src="../../img/媒体库使用指南/image-20240318161717332.jpg" alt="image-20240318161717332" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240318161717332</span></div></div>
+
+<h3 id="6-演唱会"><a href="#6-演唱会" class="headerlink" title="6. 演唱会"></a>6. 演唱会</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/媒体库使用指南/image-20240318162535713.jpg" data-src="../../img/媒体库使用指南/image-20240318162535713.jpg" alt="image-20240318162535713" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20240318162535713</span></div></div>
+
+<hr>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../assets/user/about_me.jpg" data-src="../../assets/user/about_me.jpg" alt="欢迎关注我的其他平台" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">欢迎关注我的其他平台</span></div></div>
+
+<div class="tag-plugin ds-rating" data-api="https://star-vote-neon.vercel.app/api/rating" data-api="https://star-vote-neon.vercel.app/api/rating" data-id="How-To-Use-MediaServer"><div class="header"><span>给文章评个分吧！</span></div><div class="body"><button class="star" data-value="1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="3"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="5"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><span class="avg">(0.0)</span></div><div class="footer"><span class="count">0</span><span class="suffix">人已评分</span></div></div>
+</article>
+<div class="article-footer">
+    <section id="references">
+      <div class="header"><span>参考资料</span></div>
+      <div class="body">
+        <ul>
+        <li class="post-title">
+          <p><a href="https://blog.上杉九月.cn/">九月的生活</a></p>
+
+        </li>
+        
+        <li class="post-title">
+          <p><a target="_blank" rel="noopener" href="https://alist.xiaoya.pro/">小雅媒体库</a></p>
+
+        </li>
+        
+        <li class="post-title">
+          <p><a target="_blank" rel="noopener" href="https://wiki.asakie.com/">Asakie Wiki</a></p>
+
+        </li>
+        
+        <li class="post-title">
+          <p><a target="_blank" rel="noopener" href="https://blog.izain.cn/macos-emby-unlock">Zain 的 Blog</a></p>
+
+        </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+
+    <section id="share">
+      <div class="header"><span>分享文章</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://blog.上杉九月.cn/posts/How-To-Use-MediaServer/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" /></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://blog.上杉九月.cn/posts/How-To-Use-MediaServer/&title=媒体库使用指南 - 九月的生活&pics=../../assets/cover/媒体库使用指南.jpg&summary=All in one 主机基本搭建完成了，这次媒体库也得到了一次大升级，目前先开放媒体库进行测试，后续会更新媒体库详细的搭建指南。"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=媒体库使用指南 - 九月的生活&amp;body=https://blog.上杉九月.cn/posts/How-To-Use-MediaServer/"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+        
+        <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://blog.上杉九月.cn/posts/How-To-Use-MediaServer/"/>
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/posts/md-to-stellar/">适用于 Stellar 的标签转换脚本</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/posts/TeamSpeak/">TeamSpeak使用指南</a></div></section></div>
+
+<div class="related-wrap" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="/posts/emby_bot/" title="EmbyBot使用指南"><span class="title">EmbyBot使用指南</span><span class="excerpt">简易的EmbyBot使用指南，附带各平台播放器推荐应用</span></a><a class="item" href="/posts/anime-collect-bdrip/" title="动漫年鉴 - BDRip"><span class="title">动漫年鉴 - BDRip</span><span class="excerpt">媒体库动漫入库通知</span></a><a class="item" href="/posts/ZeroLinux/" title="云服务器的简单使用指南"><span class="title">云服务器的简单使用指南</span><span class="excerpt">简单教你如何采购服务器，配置服务器基本环境，并获得流畅的Docker使用环境。</span></a></div></section></div>
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><div style="text-align: center;">
+  本站由 <a target="_blank" rel="noopener" href="https://sakurasep.site">上杉九月</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar 1.26.8</a> 主题创建。<br>
+  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span><br>
+  <script async src="/assets/js/busuanzi.js"></script>
+  <a href="https://icp.gov.moe/?keyword=20240797" target="_blank">萌ICP备20240797号</a><br>
+  本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。
+</div>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AA%92%E4%BD%93%E5%BA%93%E4%BB%8B%E7%BB%8D"><span class="toc-text">一、媒体库介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%AC%E5%9C%B0%E5%BA%93"><span class="toc-text">1. 本地库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E6%9C%AC%E5%9C%B0%E5%BA%93%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">1.1 本地库的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E6%9C%AC%E5%9C%B0%E5%BA%93%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">1.2 本地库的缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BD%91%E7%BB%9C%E5%BA%93"><span class="toc-text">2. 网络库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E7%BD%91%E7%BB%9C%E5%BA%93%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">2.1 网络库的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E7%BD%91%E7%BB%9C%E5%BA%93%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">2.2 网络库的缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AA%92%E4%BD%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">二、媒体库的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%A6%82%E4%BD%95%E8%A7%82%E7%9C%8B%E5%AA%92%E4%BD%93%E5%BA%93%E4%B8%AD%E7%9A%84%E5%BD%B1%E7%89%87"><span class="toc-text">1. 如何观看媒体库中的影片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-Windows-%E7%94%A8%E6%88%B7"><span class="toc-text">1.1 Windows 用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-macOS-%E7%94%A8%E6%88%B7"><span class="toc-text">1.2 macOS 用户</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Electron-%E7%89%88%EF%BC%88%E6%AC%A1%E4%BC%98%EF%BC%89"><span class="toc-text">使用 Electron 版（次优）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Emby-%E5%AE%98%E6%96%B9%E5%AE%A2%E6%88%B7%E7%AB%AF-%EF%BC%88%E4%B8%8D%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-text">使用 Emby 官方客户端 （不推荐）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%AE%A2%E6%88%B7%E7%AB%AF-Infuse-%EF%BC%88%E4%BB%98%E8%B4%B9%E4%BC%98%E9%80%89%EF%BC%89"><span class="toc-text">使用第三方客户端 Infuse （付费优选）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-VidHub"><span class="toc-text">使用 VidHub</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-Android-%E7%94%A8%E6%88%B7"><span class="toc-text">1.3 Android 用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-IOS-%E7%94%A8%E6%88%B7"><span class="toc-text">1.4 IOS 用户</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Infuse"><span class="toc-text">使用 Infuse</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-VidHub-1"><span class="toc-text">使用 VidHub</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-Android-TV-%E7%94%A8%E6%88%B7"><span class="toc-text">1.5 Android TV 用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-Apple-TV-%E7%94%A8%E6%88%B7"><span class="toc-text">1.6 Apple TV 用户</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E6%90%9C%E7%B4%A2%E4%BD%A0%E6%83%B3%E7%9C%8B%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-text">2. 如何搜索你想看的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0-Telegram-%E7%BE%A4%E7%BB%84-%E5%92%8C-Telegram-Bot"><span class="toc-text">添加 Telegram 群组 和 Telegram Bot</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-ID-%E5%B9%B6-%E6%B7%BB%E5%8A%A0%E6%9D%83%E9%99%90"><span class="toc-text">获取 ID 并 添加权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E5%BA%93%E6%88%90%E5%8A%9F"><span class="toc-text">入库成功</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8A%A8%E6%BC%AB%E5%BD%92%E6%A1%A3%E8%AE%A1%E5%88%92"><span class="toc-text">三、动漫归档计划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2024"><span class="toc-text">1. 2024</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2024-%E6%98%A5%E5%AD%A3%E6%96%B0%E7%95%AA"><span class="toc-text">2024 春季新番</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2023"><span class="toc-text">2. 2023</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2023-%E5%86%AC%E5%AD%A3%E6%9C%AA%E5%AE%8C%E7%BB%93"><span class="toc-text">2023 冬季未完结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2023-%E5%86%AC%E5%AD%A3%E5%AE%8C%E7%BB%93"><span class="toc-text">2023 冬季完结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AA%92%E4%BD%93%E5%BA%93%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="toc-text">四、媒体库更新日志</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%BD%E4%BA%A7%E5%89%A7"><span class="toc-text">1. 国产剧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%97%A5%E9%9F%A9%E5%89%A7"><span class="toc-text">2. 日韩剧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A4%96%E8%AF%AD%E7%94%B5%E5%BD%B1"><span class="toc-text">3. 外语电影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8D%8E%E8%AF%AD%E7%94%B5%E5%BD%B1"><span class="toc-text">4. 华语电影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8A%A8%E7%94%BB%E7%94%B5%E5%BD%B1"><span class="toc-text">5. 动画电影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%BC%94%E5%94%B1%E4%BC%9A"><span class="toc-text">6. 演唱会</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js","envId":"https://twikoo.sakurasep.top"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":"https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url={href}"},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote-neon.vercel.app/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote-neon.vercel.app/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+
+  <script defer src="https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js"></script>
+  <script defer>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new ChucklePostAI(Object.assign({
+        el: 'article.content',
+        css: `/css/_plugins/tianli_gpt`
+      }, JSON.parse(`{"enable":true,"js":"https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js","field":"post","key":"f293e3bdd87443869bb9","total_length":1000,"typewriter":true,"summary_directly":true,"rec_method":"all","hide_shuttle":true,"summary_toggle":false,"interface":{"name":"AI摘要","introduce":"我是文章辅助AI: QX-AI，点击下方的按钮，让我生成本文简介、推荐相关文章等。","version":"TianliGPT","button":["介绍自己","推荐文章","生成摘要","矩阵穿梭"]}}`)))
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

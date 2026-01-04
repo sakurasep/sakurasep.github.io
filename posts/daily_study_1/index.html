@@ -1,0 +1,1171 @@
+
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>沉淀计划 Day1 - 九月的生活</title>
+
+  
+    <meta name="description" content="记录一下春招前我的学习内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="沉淀计划 Day1">
+<meta property="og:url" content="https://blog.上杉九月.cn/posts/daily_study_1/">
+<meta property="og:site_name" content="九月的生活">
+<meta property="og:description" content="记录一下春招前我的学习内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.xn--fhqths51enha.cn/assets/icon/new_avatar_256.png">
+<meta property="article:published_time" content="2025-12-22T01:45:45.000Z">
+<meta property="article:modified_time" content="2025-12-22T01:45:45.000Z">
+<meta property="article:author" content="上杉九月">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.xn--fhqths51enha.cn/assets/icon/new_avatar_256.png">
+  
+  
+  
+  <meta name="keywords" content="学习,编程,算法,面试">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="九月的生活" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="/assets/icon/favicon32.ico">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"上杉九月","sameAs":[],"image":"/assets/icon/new_avatar_256.png"},"dateCreated":"2025-12-22T09:45:45+08:00","dateModified":"2025-12-22T09:45:45+08:00","datePublished":"2025-12-22T09:45:45+08:00","description":"","headline":"沉淀计划 Day1","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.上杉九月.cn/posts/daily_study_1/"},"publisher":{"@type":"Organization","name":"上杉九月","sameAs":[],"image":"/assets/icon/new_avatar_256.png","logo":{"@type":"ImageObject","url":"/assets/icon/new_avatar_256.png"}},"url":"https://blog.上杉九月.cn/posts/daily_study_1/","keywords":"学习, 编程, 算法, 面试","thumbnailUrl":"../../img/沉淀计划Day1/学习笔记-春招冲刺.png","image":1}</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css" />
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/page/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/assets/icon/new_avatar_256.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">九月的生活</div><div class="sub normal cap">无限进步!</div><div class="sub hover cap" style="opacity:0"> blog.上杉九月.cn</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="我的手账" href="/page/about/timeline/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><mask id="IconifyId18dd63a1ebb63860d4"><g fill="none"><path fill="#fff" d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12"/><path fill="#000" fill-rule="evenodd" d="M12 7.25a.75.75 0 0 1 .75.75v3.69l2.28 2.28a.75.75 0 1 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V8a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/></g></mask></defs><path fill="currentColor" d="M0 0h24v24H0z" mask="url(#IconifyId18dd63a1ebb63860d4)"/></svg></a><a class="nav-item" title="项目" href="/page/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="友链" href="/page/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+<widget class="widget-wrapper related post-list"><div class="widget-header dis-select"><span class="name">专栏：study_note</span></div><div class="widget-body"><a class="item" href="/posts/daily_study_3/"><span class="title">沉淀计划 Day3</span></a><a class="item" href="/posts/daily_study_2/"><span class="title">沉淀计划 Day2</span></a><a class="item active" href="/posts/daily_study_1/"><span class="title">沉淀计划 Day1</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a></div></widget>
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/posts/daily_study_2/"><span class="title">沉淀计划 Day2</span></a><a class="item title" href="/posts/daily_study_3/"><span class="title">沉淀计划 Day3</span></a><a class="item title" href="/posts/daily_study_1/"><span class="title">沉淀计划 Day1</span></a><a class="item title" href="/posts/emby_bot/"><span class="title">EmbyBot使用指南</span></a><a class="item title" href="/posts/anime-collect-bdrip/"><span class="title">动漫年鉴 - BDRip</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/sakurasep" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.163.com/#/user/home?id=308455780" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3845874.svg"/></a><a class="social" href="https://bu.dusays.com/2023/12/28/658d3928982fc.png" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg"/></a><a class="social" href="https://t.me/+XrFIEcN4cyEyMzhl" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/></a><a class="social" href="https://weibo.com/u/5703570229" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg"/></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top"><img class="lazy bg" data-src="../../img/沉淀计划Day1/学习笔记-春招冲刺.png">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/page/topic/">专栏</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/posts/daily_study_3/">study_note</a></div>
+<div class="flex-row" id="post-meta"><a class="author" href="/author/sakurasep/">上杉九月</a><span class="sep"></span><span class="text created"><time datetime="2025-12-22T01:45:45.000Z">2025-12-22</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-12-22T01:45:45.000Z">2025-12-22</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>沉淀计划 Day1</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><div class="tag-plugin colorful okr" >
+  <div class="okr-item o" id="okr-o1">
+    <div class="okr-left">
+      <span class="title">O1</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">冲刺春招，希望自己能找到一个合适自己的，待遇还不错的工作！</span>
+      <div class="note"></div>
+    </div>
+    <div class="okr-right colorful" color="blue">
+      <div class="labels">
+        <span class="status label">正常</span>
+        <span class="status percent">75%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:75%;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="okr-item kr" id="okr-kr1">
+    <div class="okr-left">
+      <span class="title">KR1</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">基础 Java 语法复习</span>
+      <div class="note"><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>Java 关键字</span></div><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>Java 注释</span></div><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>Java 数据类型</span></div><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>Java 数据类型转换</span></div><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>Java 基本数据类型缓存池</span></div><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>Java 运算符</span></div><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>Java 流程控制语句</span></div></div>
+    </div>
+    <div class="okr-right colorful" color="green">
+      <div class="labels">
+        <span class="status label">已完成</span>
+        <span class="status percent">100%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:100%;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="okr-item kr" id="okr-kr2">
+    <div class="okr-left">
+      <span class="title">KR2</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">基础算法练习</span>
+      <div class="note"><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>力扣 TOP100</span></div>  * 两数之和  * 两数相加</div>
+    </div>
+    <div class="okr-right colorful" color="green">
+      <div class="labels">
+        <span class="status label">已完成</span>
+        <span class="status percent">100%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:100%;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="okr-item kr" id="okr-kr3">
+    <div class="okr-left">
+      <span class="title">KR3</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">面渣逆袭 Java 基础篇 1-6</span>
+      <div class="note"></div>
+    </div>
+    <div class="okr-right colorful" color="green">
+      <div class="labels">
+        <span class="status label">已完成</span>
+        <span class="status percent">100%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:100%;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="okr-item kr" id="okr-kr4">
+    <div class="okr-left">
+      <span class="title">KR4</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">伙伴匹配项目</span>
+      <div class="note"></div>
+    </div>
+    <div class="okr-right colorful" color="blue">
+      <div class="labels">
+        <span class="status label">正常</span>
+        <span class="status percent">0%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:0%;"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<h1 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h1><h2 id="基础-Java-语法复习"><a href="#基础-Java-语法复习" class="headerlink" title="基础 Java 语法复习"></a>基础 Java 语法复习</h2><h3 id="Java-关键字"><a href="#Java-关键字" class="headerlink" title="Java 关键字"></a>Java 关键字</h3><h4 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h4><ol>
+<li><code>abstract</code>：抽象类 抽象方法的修饰词，主要的用法是先抽象一个类以及方法，然后再继承它进行重写实现  </li>
+<li><code>class</code> 声明一个类  </li>
+<li><code>enum</code>：定义一组固定的常量  </li>
+<li><code>null</code>：空值  </li>
+<li><code>package</code>：声明类所在的包  </li>
+<li><code>void</code>：指定的方法无返回值</li>
+</ol>
+<hr>
+<h4 id="二、基本数据类型"><a href="#二、基本数据类型" class="headerlink" title="二、基本数据类型"></a>二、基本数据类型</h4><ol>
+<li><code>boolean</code>：基本数据类型 true false  </li>
+<li><code>byte</code>：基本数据类型 八位的有符号整数 范围是 -128 到 127 主要是占用空间小，适用于处理大量数据的场景  </li>
+<li><code>char</code>：基本数据类型 用于存储字符  </li>
+<li><code>double</code>：基本数据类型 双精度浮点数  </li>
+<li><code>float</code>：基本数据类型 单精度浮点数  </li>
+<li><code>int</code>：基本数据类型 整数  </li>
+<li><code>long</code>：基本数据类型 长整形  </li>
+<li><code>short</code>：基本数据类型，短整型</li>
+</ol>
+<hr>
+<h4 id="三、控制流"><a href="#三、控制流" class="headerlink" title="三、控制流"></a>三、控制流</h4><ol>
+<li><code>break</code>：跳出当前循环结构 for while switch 语句  </li>
+<li><code>switch case</code> 语句：根据某个变量的值 执行不同的代码块  </li>
+<li><code>continue</code>：跳过本次循环，进行下一次循环  </li>
+<li><code>default</code>：switch case 语句中一定会执行的代码块  </li>
+<li><code>do</code>：do 和 while 一般是一起使用的，do 中的代码块一定会执行一次（不管 while 条件是什么）  </li>
+<li><code>else</code>：通常和 if 一起使用，算是 if 判断的分支语句  </li>
+<li><code>for</code>：for 循环语句</li>
+</ol>
+<hr>
+<h4 id="四、类、接口与面向对象"><a href="#四、类、接口与面向对象" class="headerlink" title="四、类、接口与面向对象"></a>四、类、接口与面向对象</h4><ol>
+<li><code>extends</code>：继承一个类或者接口  </li>
+<li><code>implements</code>：实现接口  </li>
+<li><code>interface</code>：声明一个接口 可以提前写好方法体，等待后续的实现  </li>
+<li><code>new</code>：用于创建一个新的对象  </li>
+<li><code>super</code>：调用父类的方法  </li>
+<li><code>this</code>：引用当前对象</li>
+</ol>
+<hr>
+<h4 id="五、访问修饰符"><a href="#五、访问修饰符" class="headerlink" title="五、访问修饰符"></a>五、访问修饰符</h4><ol>
+<li><code>private</code>：访问修饰符，方法和变量只对当前类可见  </li>
+<li><code>protected</code>：访问修饰符，方法和变量只对当前包里的类和子类可见  </li>
+<li><code>public</code>：访问修饰符，所有类可见</li>
+</ol>
+<hr>
+<h4 id="六、修饰符"><a href="#六、修饰符" class="headerlink" title="六、修饰符"></a>六、修饰符</h4><ol>
+<li><code>final</code>：修饰词，三种用法，final 变量表示这个变量是一个不可以修改的常量，final 方法表示这个方法不能够被重写，final 类表示这个类不能够被继承  </li>
+<li><code>finally</code>：try catch finally finally 的作用就是这个结构中最后一定会执行的代码块，类似于 switch case 中的 default  </li>
+<li><code>native</code>：声明本地方法  </li>
+<li><code>static</code>：静态修饰符，静态方法或者静态变量  </li>
+<li><code>synchronized</code>：主要是指定多线程代码中的需要同步的部分  </li>
+<li><code>transient</code>：修饰的字段不会被序列化  </li>
+<li><code>volatile</code>：它所修饰的变量可以被不同线程立刻可见</li>
+</ol>
+<hr>
+<h4 id="七、异常处理"><a href="#七、异常处理" class="headerlink" title="七、异常处理"></a>七、异常处理</h4><ol>
+<li><code>try catch</code>：try 中的代码块可以抛出异常，然后 catch 中的代码块负责捕获异常并进行处理  </li>
+<li><code>throw</code>：主动抛出异常  </li>
+<li><code>throws</code>：声明异常</li>
+</ol>
+<hr>
+<h4 id="八、其他关键字与工具"><a href="#八、其他关键字与工具" class="headerlink" title="八、其他关键字与工具"></a>八、其他关键字与工具</h4><ol>
+<li><code>import</code>：引入接口或者类  </li>
+<li><code>instanceof</code>：判断某一个对象是不是属于一个类  </li>
+<li><code>return</code>：从一个方法中返回值，或者就是提前结束方法的执行</li>
+</ol>
+<hr>
+<h3 id="Java-注释"><a href="#Java-注释" class="headerlink" title="Java 注释"></a>Java 注释</h3><ol>
+<li>类、字段、方法 必须使用文档注释</li>
+<li>抽象方法的注释必须符合 Javadoc 规范，最基础包含<code>@param</code> <code>@return</code></li>
+<li>类注释必须添加创建者和日期<code>@author</code> <code>@date</code></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据登录令牌删除Redis中的用户信息，实现用户登出。</span></span><br><span class="line"><span class="comment"> * 令牌为空或删除失败时返回false。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> token 用户登录令牌</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 删除是否成功</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">userLogout</span><span class="params">(String token)</span> &#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(StringUtils.isNotBlank(token)) &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> LOGIN_USER_KEY + token;</span><br><span class="line">        result = Boolean.TRUE.equals(stringRedisTemplate.delete(key));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Java-数据类型"><a href="#Java-数据类型" class="headerlink" title="Java 数据类型"></a>Java 数据类型</h3><h4 id="1-比特和字节"><a href="#1-比特和字节" class="headerlink" title="1. 比特和字节"></a>1. 比特和字节</h4><p>比特是最小的数据单位 </p>
+<p>1 字节 &#x3D; 8 比特</p>
+<h4 id="2-基本数据类型"><a href="#2-基本数据类型" class="headerlink" title="2. 基本数据类型"></a>2. 基本数据类型</h4><p>char、byte、int、short、long、boolean、float、double</p>
+<h4 id="3-单精度和双精度"><a href="#3-单精度和双精度" class="headerlink" title="3. 单精度和双精度"></a>3. 单精度和双精度</h4><p>float 32 位浮点数 double 64 位浮点数</p>
+<p>符号位 + 指数部分 + 尾数部分</p>
+<p>单精度 1 符号位  + 8 指数位 + 23 尾数位</p>
+<p>双精度 1 符号位 + 11 指数位 + 52 尾数位</p>
+<h4 id="4-int-和-char-类型互转"><a href="#4-int-和-char-类型互转" class="headerlink" title="4. int 和 char 类型互转"></a>4. int 和 char 类型互转</h4><p>char 转 int 是自动类型转换</p>
+<p>int 转 char 是强制类型转换</p>
+<h4 id="5-包装器类型"><a href="#5-包装器类型" class="headerlink" title="5. 包装器类型"></a>5. 包装器类型</h4><p>Java 为基础数据类型提供了对应的包装器类型</p>
+<p>而且由于自动装箱和自动拆箱机制的存在，不同数据类型之间的转换是自动的。</p>
+<h4 id="6-引用数据类型"><a href="#6-引用数据类型" class="headerlink" title="6. 引用数据类型"></a>6. 引用数据类型</h4><p>对象、接口、字符串</p>
+<p>基本数据类型：</p>
+<ol>
+<li>变量名指向的是基本数据</li>
+<li>基本数据类型存在栈上</li>
+</ol>
+<p>引用数据类型：</p>
+<ol>
+<li>变量名指向的是对象的内存地址</li>
+<li>对象存在堆上</li>
+</ol>
+<h4 id="7-堆和栈"><a href="#7-堆和栈" class="headerlink" title="7. 堆和栈"></a>7. 堆和栈</h4><p>从速度上来说，栈要比堆快的多的多，但是同时，栈很小，他只能存基本数据类型，而引用数据类型，例如对象，它太大了，栈存不下。</p>
+<p>所以我们在代码中 new 一个对象的时候，都是在堆里开辟一个空间进行保存，只会将一个指向堆的内存地址保存在栈中。</p>
+<h3 id="Java-数据类型转换"><a href="#Java-数据类型转换" class="headerlink" title="Java 数据类型转换"></a>Java 数据类型转换</h3><h4 id="1-自动类型转换"><a href="#1-自动类型转换" class="headerlink" title="1. 自动类型转换"></a>1. 自动类型转换</h4><p>byte -&gt; short -&gt; int -&gt; long -&gt; float -&gt; double</p>
+<p>char -&gt; int</p>
+<p>以上是需要熟练记住的自动转换规则。</p>
+<p>还有一种转换规则，编译器会自动帮我们转换在取值范围内的数据，比如说 <code>byte b = 50;</code> 在我们的理解下这是 50 是 int，理论上这样需要强制转换，但是因为 50 在 byte 类型的取值范围内，编译器隐性的帮我们转换了。</p>
+<h4 id="2-强制类型转换"><a href="#2-强制类型转换" class="headerlink" title="2. 强制类型转换"></a>2. 强制类型转换</h4><p>记住一点，强制类型转换要保证转换后的值的取值范围在新的类型的范围内，否则就会报错。</p>
+<p>当前，强制类型转换肯定会导致精度的问题。</p>
+<h3 id="Java-基本数据类型缓存池"><a href="#Java-基本数据类型缓存池" class="headerlink" title="Java 基本数据类型缓存池"></a>Java 基本数据类型缓存池</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">x</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">18</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">y</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">18</span>);</span><br><span class="line">System.out.println(x == y);</span><br><span class="line"></span><br><span class="line"><span class="type">Integer</span> <span class="variable">z</span> <span class="operator">=</span> Integer.valueOf(<span class="number">18</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">k</span> <span class="operator">=</span> Integer.valueOf(<span class="number">18</span>);</span><br><span class="line">System.out.println(z == k);</span><br><span class="line"></span><br><span class="line"><span class="type">Integer</span> <span class="variable">m</span> <span class="operator">=</span> Integer.valueOf(<span class="number">300</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">p</span> <span class="operator">=</span> Integer.valueOf(<span class="number">300</span>);</span><br><span class="line">System.out.println(m == p);</span><br><span class="line"></span><br><span class="line"><span class="literal">false</span></span><br><span class="line"><span class="literal">true</span></span><br><span class="line"><span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>除了 Float 和 Double </p>
+<p>其他的包装类都有一个常量缓存池 范围是 Byte 型的取值 -127-128</p>
+<p>Boolean：true false</p>
+<p>Character：\u0000 - \u007F</p>
+<p>valueOf 的源码其实先判断是否在缓存池中，如果在直接从常量池中返回数值；如果不在就会 new 一个新的包装类对象。</p>
+<h3 id="Java-运算符"><a href="#Java-运算符" class="headerlink" title="Java 运算符"></a>Java 运算符</h3><h4 id="1-算术运算符"><a href="#1-算术运算符" class="headerlink" title="1. 算术运算符"></a>1. 算术运算符</h4><p>加减乘除 + 取余 + 自增自减</p>
+<h4 id="2-关系运算符"><a href="#2-关系运算符" class="headerlink" title="2. 关系运算符"></a>2. 关系运算符</h4><p>大于 and 小于 + 等于 and 不等于 + 大于等于 and 小于等于</p>
+<h4 id="3-位运算符"><a href="#3-位运算符" class="headerlink" title="3. 位运算符"></a>3. 位运算符</h4><p>其实位运算符挺好理解的，想一想二进制的排序，往左移 &lt;&lt; 就是乘 2 的 几次方，往右移就是除以 2 的几次方</p>
+<h4 id="4-逻辑运算符"><a href="#4-逻辑运算符" class="headerlink" title="4. 逻辑运算符"></a>4. 逻辑运算符</h4><p>&amp;&amp; 逻辑与</p>
+<p>|| 逻辑或</p>
+<p>! 逻辑非</p>
+<p>逻辑与和逻辑或这两个运算符都有短路的效果，如果左侧条件不满足，则右侧条件不会执行。</p>
+<h4 id="5-赋值运算符"><a href="#5-赋值运算符" class="headerlink" title="5. 赋值运算符"></a>5. 赋值运算符</h4><h4 id="6-三元运算符"><a href="#6-三元运算符" class="headerlink" title="6. 三元运算符"></a>6. 三元运算符</h4><p>三元运算符主要是简单的替换 if-else 语句</p>
+<p><code>int min=(a&lt;b)?a:b;</code></p>
+<p>如果 ? 前面的为 true 则执行 : 前面的 否则执行 : 后面的</p>
+<h3 id="Java-流程控制语句"><a href="#Java-流程控制语句" class="headerlink" title="Java 流程控制语句"></a>Java 流程控制语句</h3><ol>
+<li>if-else</li>
+<li>switch case</li>
+<li>for</li>
+<li>while(do while)</li>
+<li>continue</li>
+<li>break</li>
+</ol>
+<h2 id="LeetCode-Top100"><a href="#LeetCode-Top100" class="headerlink" title="LeetCode Top100"></a>LeetCode Top100</h2><h3 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1. 两数之和"></a>1. 两数之和</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/沉淀计划Day1/image-20251222161237418.png" data-src="../../img/沉淀计划Day1/image-20251222161237418.png" alt="两数之和" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">两数之和</span></div></div>
+
+<p>这道题的思路在不考虑时间的情况下，O（n²）双层循环暴力破解，固定一个数然后遍历后续的数，相加等于目标值即可输出。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> LC;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Leetcode 01 两数之和</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> sakurasep</span></span><br><span class="line"><span class="comment"> * * <span class="doctag">@date</span> 22/12/2025</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LC01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] nums = &#123;<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>&#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> <span class="number">6</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : twoSum(nums, target)) &#123;</span><br><span class="line">            System.out.println(num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</span><br><span class="line">                    ans[<span class="number">0</span>] = i;</span><br><span class="line">                    ans[<span class="number">1</span>] = j;</span><br><span class="line">                    <span class="keyword">return</span> ans;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-两数相加"><a href="#2-两数相加" class="headerlink" title="2. 两数相加"></a>2. 两数相加</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/沉淀计划Day1/58c9f4ab-89b1-4100-b71c-4fb7b63939ef.png" data-src="../../img/沉淀计划Day1/58c9f4ab-89b1-4100-b71c-4fb7b63939ef.png" alt="两数相加" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">两数相加</span></div></div>
+
+<p>这个题我的思路是看示例想的，因为题目中说了数字是逆序存在链表里的，其实就相当于省事了，正好是从个位开始计算。然后两个链表依次读取结点的值，然后加起来（结点 1 + 结点 2 + 进位）进位就是除以 10，最终结果就是模 10。</p>
+<p>其实两个列表的长度不同好处理，满足两个有一个不为空整个加法继续，然后短的链表后边的空值统一设置为 0 就行，然后最后要考虑一下最高位的进位。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> LC;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Leetcode 02 两数之和</span></span><br><span class="line"><span class="comment"> * 很基础的链表操作</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> sakurasep</span></span><br><span class="line"><span class="comment"> * * <span class="doctag">@date</span> 22/12/2025</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LC02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] num1 = &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>&#125;;</span><br><span class="line">        <span class="type">int</span>[] num2 = &#123;<span class="number">5</span>, <span class="number">6</span>, <span class="number">4</span>&#125;;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">node1</span> <span class="operator">=</span> createListNode(num1);</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">node2</span> <span class="operator">=</span> createListNode(num2);</span><br><span class="line">        printListNode(addTwoNumbers(node1, node2));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title function_">createListNode</span><span class="params">(<span class="type">int</span>[] value)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (value == <span class="literal">null</span> || value.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建头结点</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">head</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(value[<span class="number">0</span>]);</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">current</span> <span class="operator">=</span> head;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建链表</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; value.length; i++) &#123;</span><br><span class="line">            current.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(value[i]);</span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printListNode</span><span class="params">(ListNode node)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">current</span> <span class="operator">=</span> node;</span><br><span class="line">        <span class="keyword">while</span> (current != <span class="literal">null</span>) &#123;</span><br><span class="line">            System.out.println(current.val);</span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">        <span class="type">int</span> val;</span><br><span class="line">        ListNode next;</span><br><span class="line"></span><br><span class="line">        ListNode() &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ListNode(<span class="type">int</span> val) &#123;</span><br><span class="line">            <span class="built_in">this</span>.val = val;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ListNode(<span class="type">int</span> val, ListNode next) &#123;</span><br><span class="line">            <span class="built_in">this</span>.val = val;</span><br><span class="line">            <span class="built_in">this</span>.next = next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title function_">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">dummyHead</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>); <span class="comment">// 哑节点，简化操作</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">current</span> <span class="operator">=</span> dummyHead;</span><br><span class="line">        <span class="type">int</span> <span class="variable">carry</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 进位</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">currentl1</span> <span class="operator">=</span> l1; <span class="type">ListNode</span> <span class="variable">currentl2</span> <span class="operator">=</span> l2;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (currentl1 != <span class="literal">null</span> || currentl2 != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> (currentl1 != <span class="literal">null</span>) ? currentl1.val : <span class="number">0</span>;</span><br><span class="line">            <span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> (currentl2 != <span class="literal">null</span>) ? currentl2.val : <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> num1 + num2 + carry;</span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> sum % <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            current.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(ans);</span><br><span class="line">            current = current.next;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (currentl1 != <span class="literal">null</span>) &#123;</span><br><span class="line">                currentl1 = currentl1.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (currentl2 != <span class="literal">null</span>) &#123;</span><br><span class="line">                currentl2 = currentl2.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (carry &gt; <span class="number">0</span>) &#123; <span class="comment">// 额外进位</span></span><br><span class="line">            current.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(carry);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dummyHead.next;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="面渣逆袭"><a href="#面渣逆袭" class="headerlink" title="面渣逆袭"></a>面渣逆袭</h2><h3 id="1-什么是-Java"><a href="#1-什么是-Java" class="headerlink" title="1. 什么是 Java"></a>1. 什么是 Java</h3><p>Java 是一个面向对象的编程语言，他继承了 C++的优点，同时又舍弃了 C++中容易出错的内容，比如指针和垃圾回收。</p>
+<p>Java 的特点是一次编译多处运行，这主要是依靠于 JDK 实现的，因为 Java 在编译后会生成字节码，字节码会在 JVM 中运行，所以只要对应的平台安装了对应的 JDK，Java 代码就可以顺利执行。</p>
+<h3 id="2-Java-语言的特点"><a href="#2-Java-语言的特点" class="headerlink" title="2. Java 语言的特点"></a>2. Java 语言的特点</h3><ol>
+<li>Java 语言的三大特点，继承、封装、多态。</li>
+<li>一次编译，多处运行。主要是和 Java 程序的运行原理有关，Java 程序在 JVM 中运行。</li>
+<li>多线程，Java 内置多线程操作。</li>
+<li>支持 JIT 即时编译，可以通过优化热点代码提升程序的运行速度。</li>
+</ol>
+<h3 id="3-JDK-JRE-JVM-有什么区别"><a href="#3-JDK-JRE-JVM-有什么区别" class="headerlink" title="3. JDK JRE JVM 有什么区别"></a>3. JDK JRE JVM 有什么区别</h3><p>JDK 是 Java 开发工具包，包含了 JRE（Java 运行环境）和 JVM（Java 虚拟机）</p>
+<p>大多数情况下，如果只需要运行 Java 程序，那么就安装 JRE 就可以。</p>
+<p>JVM 的任务是将 Java 字节码转换成对应平台的机器码。</p>
+<h3 id="4-说说什么是跨平台-原理是什么"><a href="#4-说说什么是跨平台-原理是什么" class="headerlink" title="4. 说说什么是跨平台 原理是什么"></a>4. 说说什么是跨平台 原理是什么</h3><p>Java 程序的特点就是一次编译，多处部署，这使得它有良好的跨平台的特性，也就是说只需要写一份代码，就可以在多个平台上运行。</p>
+<p>原理就是 Java 程序编译好的是 Java 字节码，然后 Java 程序运行的时候通过 JVM 转换成对应平台的机器码。</p>
+<h3 id="5-什么是字节码-字节码的好处是什么"><a href="#5-什么是字节码-字节码的好处是什么" class="headerlink" title="5. 什么是字节码 字节码的好处是什么"></a>5. 什么是字节码 字节码的好处是什么</h3><p>字节码就是 Java 程序编译后的 class 文件，好处就是通过 JVM 这个桥梁，一份字节码就能在不同的平台运行。</p>
+<h3 id="6-为什么说-Java-是解释与编译并存的语言"><a href="#6-为什么说-Java-是解释与编译并存的语言" class="headerlink" title="6. 为什么说 Java 是解释与编译并存的语言"></a>6. 为什么说 Java 是解释与编译并存的语言</h3><p>编译型语言意味着一次性就将代码编译成某一个平台的机器码。</p>
+<p>解释型语言则依靠着解释器逐行将代码翻译成对应平台的机器码。</p>
+<p>之所以 Java 是解释与编译并存的语言，主要就是因为 Java 是将代码一次性编译成字节码，这一点很像编译型语言，但是 Java 又是通过 JVM 将代码逐行翻译成对应平台的机器码进行运行。</p>
+<hr>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../assets/user/about_me.jpg" data-src="../../assets/user/about_me.jpg" alt="关于我" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">关于我</span></div></div>
+
+<div class="tag-plugin ds-rating" data-api="https://star-vote-neon.vercel.app/api/rating" data-api="https://star-vote-neon.vercel.app/api/rating" data-id="daily_study_1"><div class="header"><span>给文章评个分吧！</span></div><div class="body"><button class="star" data-value="1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="3"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="5"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><span class="avg">(0.0)</span></div><div class="footer"><span class="count">0</span><span class="suffix">人已评分</span></div></div>
+</article>
+<div class="article-footer">
+    <section id="references">
+      <div class="header"><span>参考资料</span></div>
+      <div class="body">
+        <ul>
+        <li class="post-title">
+          <p><a href="https://blog.上杉九月.cn/">九月的生活</a></p>
+
+        </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+
+    <section id="share">
+      <div class="header"><span>分享文章</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://blog.上杉九月.cn/posts/daily_study_1/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" /></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://blog.上杉九月.cn/posts/daily_study_1/&title=沉淀计划 Day1 - 九月的生活&pics=../../img/沉淀计划Day1/学习笔记-春招冲刺.png&summary=记录一下春招前我的学习内容"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=沉淀计划 Day1 - 九月的生活&amp;body=https://blog.上杉九月.cn/posts/daily_study_1/"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+        
+        <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://blog.上杉九月.cn/posts/daily_study_1/"/>
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/posts/daily_study_3/">沉淀计划 Day3</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/posts/emby_bot/">EmbyBot使用指南</a></div></section></div>
+
+<div class="related-wrap" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="/posts/daily_study_2/" title="沉淀计划 Day2"><span class="title">沉淀计划 Day2</span><span class="excerpt">记录一下春招前我的学习内容</span></a><a class="item" href="/posts/daily_study_3/" title="沉淀计划 Day3"><span class="title">沉淀计划 Day3</span><span class="excerpt">记录一下春招前我的学习内容</span></a></div></section></div>
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><div style="text-align: center;">
+  本站由 <a target="_blank" rel="noopener" href="https://sakurasep.site">上杉九月</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar 1.26.8</a> 主题创建。<br>
+  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span><br>
+  <script async src="/assets/js/busuanzi.js"></script>
+  <a href="https://icp.gov.moe/?keyword=20240797" target="_blank">萌ICP备20240797号</a><br>
+  本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。
+</div>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80-Java-%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0"><span class="toc-text">基础 Java 语法复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">Java 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">二、基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="toc-text">三、控制流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%B1%BB%E3%80%81%E6%8E%A5%E5%8F%A3%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">四、类、接口与面向对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">五、访问修饰符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">六、修饰符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">七、异常处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%85%B6%E4%BB%96%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%8E%E5%B7%A5%E5%85%B7"><span class="toc-text">八、其他关键字与工具</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E6%B3%A8%E9%87%8A"><span class="toc-text">Java 注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Java 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%AF%94%E7%89%B9%E5%92%8C%E5%AD%97%E8%8A%82"><span class="toc-text">1. 比特和字节</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2. 基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%8D%95%E7%B2%BE%E5%BA%A6%E5%92%8C%E5%8F%8C%E7%B2%BE%E5%BA%A6"><span class="toc-text">3. 单精度和双精度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-int-%E5%92%8C-char-%E7%B1%BB%E5%9E%8B%E4%BA%92%E8%BD%AC"><span class="toc-text">4. int 和 char 类型互转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%8C%85%E8%A3%85%E5%99%A8%E7%B1%BB%E5%9E%8B"><span class="toc-text">5. 包装器类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">6. 引用数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%A0%86%E5%92%8C%E6%A0%88"><span class="toc-text">7. 堆和栈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">Java 数据类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">1. 自动类型转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">2. 强制类型转换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%BC%93%E5%AD%98%E6%B1%A0"><span class="toc-text">Java 基本数据类型缓存池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">Java 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">1. 算术运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">2. 关系运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3. 位运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">4. 逻辑运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">5. 赋值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">6. 三元运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-text">Java 流程控制语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode-Top100"><span class="toc-text">LeetCode Top100</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-text">1. 两数之和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0"><span class="toc-text">2. 两数相加</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E6%B8%A3%E9%80%86%E8%A2%AD"><span class="toc-text">面渣逆袭</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-Java"><span class="toc-text">1. 什么是 Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Java-%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">2. Java 语言的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-JDK-JRE-JVM-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-text">3. JDK JRE JVM 有什么区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AF%B4%E8%AF%B4%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%B9%B3%E5%8F%B0-%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">4. 说说什么是跨平台 原理是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E8%8A%82%E7%A0%81-%E5%AD%97%E8%8A%82%E7%A0%81%E7%9A%84%E5%A5%BD%E5%A4%84%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">5. 什么是字节码 字节码的好处是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4-Java-%E6%98%AF%E8%A7%A3%E9%87%8A%E4%B8%8E%E7%BC%96%E8%AF%91%E5%B9%B6%E5%AD%98%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="toc-text">6. 为什么说 Java 是解释与编译并存的语言</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js","envId":"https://twikoo.sakurasep.top"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":"https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url={href}"},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote-neon.vercel.app/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote-neon.vercel.app/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+
+  <script defer src="https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js"></script>
+  <script defer>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new ChucklePostAI(Object.assign({
+        el: 'article.content',
+        css: `/css/_plugins/tianli_gpt`
+      }, JSON.parse(`{"enable":true,"js":"https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js","field":"post","key":"f293e3bdd87443869bb9","total_length":1000,"typewriter":true,"summary_directly":true,"rec_method":"all","hide_shuttle":true,"summary_toggle":false,"interface":{"name":"AI摘要","introduce":"我是文章辅助AI: QX-AI，点击下方的按钮，让我生成本文简介、推荐相关文章等。","version":"TianliGPT","button":["介绍自己","推荐文章","生成摘要","矩阵穿梭"]}}`)))
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

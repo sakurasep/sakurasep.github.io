@@ -1,0 +1,1207 @@
+
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>沉淀计划 Day2 - 九月的生活</title>
+
+  
+    <meta name="description" content="记录一下春招前我的学习内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="沉淀计划 Day2">
+<meta property="og:url" content="https://blog.上杉九月.cn/posts/daily_study_2/">
+<meta property="og:site_name" content="九月的生活">
+<meta property="og:description" content="记录一下春招前我的学习内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.xn--fhqths51enha.cn/assets/icon/new_avatar_256.png">
+<meta property="article:published_time" content="2025-12-24T01:45:45.000Z">
+<meta property="article:modified_time" content="2025-12-24T01:45:45.000Z">
+<meta property="article:author" content="上杉九月">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.xn--fhqths51enha.cn/assets/icon/new_avatar_256.png">
+  
+  
+  
+  <meta name="keywords" content="学习,编程,算法,面试">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="九月的生活" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="/assets/icon/favicon32.ico">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"上杉九月","sameAs":[],"image":"/assets/icon/new_avatar_256.png"},"dateCreated":"2025-12-24T09:45:45+08:00","dateModified":"2025-12-24T09:45:45+08:00","datePublished":"2025-12-24T09:45:45+08:00","description":"","headline":"沉淀计划 Day2","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.上杉九月.cn/posts/daily_study_2/"},"publisher":{"@type":"Organization","name":"上杉九月","sameAs":[],"image":"/assets/icon/new_avatar_256.png","logo":{"@type":"ImageObject","url":"/assets/icon/new_avatar_256.png"}},"url":"https://blog.上杉九月.cn/posts/daily_study_2/","keywords":"学习, 编程, 算法, 面试","thumbnailUrl":"../../img/沉淀计划Day1/学习笔记-春招冲刺.png","image":1}</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css" />
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/page/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/assets/icon/new_avatar_256.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">九月的生活</div><div class="sub normal cap">无限进步!</div><div class="sub hover cap" style="opacity:0"> blog.上杉九月.cn</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="我的手账" href="/page/about/timeline/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><mask id="IconifyId18dd63a1ebb63860d4"><g fill="none"><path fill="#fff" d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12"/><path fill="#000" fill-rule="evenodd" d="M12 7.25a.75.75 0 0 1 .75.75v3.69l2.28 2.28a.75.75 0 1 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V8a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/></g></mask></defs><path fill="currentColor" d="M0 0h24v24H0z" mask="url(#IconifyId18dd63a1ebb63860d4)"/></svg></a><a class="nav-item" title="项目" href="/page/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="友链" href="/page/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+<widget class="widget-wrapper related post-list"><div class="widget-header dis-select"><span class="name">专栏：study_note</span></div><div class="widget-body"><a class="item" href="/posts/daily_study_3/"><span class="title">沉淀计划 Day3</span></a><a class="item active" href="/posts/daily_study_2/"><span class="title">沉淀计划 Day2</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a><a class="item" href="/posts/daily_study_1/"><span class="title">沉淀计划 Day1</span></a></div></widget>
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/posts/daily_study_2/"><span class="title">沉淀计划 Day2</span></a><a class="item title" href="/posts/daily_study_3/"><span class="title">沉淀计划 Day3</span></a><a class="item title" href="/posts/daily_study_1/"><span class="title">沉淀计划 Day1</span></a><a class="item title" href="/posts/emby_bot/"><span class="title">EmbyBot使用指南</span></a><a class="item title" href="/posts/anime-collect-bdrip/"><span class="title">动漫年鉴 - BDRip</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/sakurasep" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.163.com/#/user/home?id=308455780" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3845874.svg"/></a><a class="social" href="https://bu.dusays.com/2023/12/28/658d3928982fc.png" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg"/></a><a class="social" href="https://t.me/+XrFIEcN4cyEyMzhl" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/></a><a class="social" href="https://weibo.com/u/5703570229" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg"/></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top"><img class="lazy bg" data-src="../../img/沉淀计划Day1/学习笔记-春招冲刺.png">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/page/topic/">专栏</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/posts/daily_study_3/">study_note</a></div>
+<div class="flex-row" id="post-meta"><a class="author" href="/author/sakurasep/">上杉九月</a><span class="sep"></span><span class="text created"><time datetime="2025-12-24T01:45:45.000Z">2025-12-24</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-12-24T01:45:45.000Z">2025-12-24</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>沉淀计划 Day2</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><div class="tag-plugin colorful okr" >
+  <div class="okr-item o" id="okr-o1">
+    <div class="okr-left">
+      <span class="title">O1</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">冲刺春招，希望自己能找到一个合适自己的，待遇还不错的工作！</span>
+      <div class="note"></div>
+    </div>
+    <div class="okr-right colorful" color="blue">
+      <div class="labels">
+        <span class="status label">正常</span>
+        <span class="status percent">50%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:50%;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="okr-item kr" id="okr-kr1">
+    <div class="okr-left">
+      <span class="title">KR1</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">数组、字符串</span>
+      <div class="note"></div>
+    </div>
+    <div class="okr-right colorful" color="green">
+      <div class="labels">
+        <span class="status label">已完成</span>
+        <span class="status percent">100%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:100%;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="okr-item kr" id="okr-kr2">
+    <div class="okr-left">
+      <span class="title">KR2</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">三道题</span>
+      <div class="note"><div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>力扣 TOP100</span></div></div>
+    </div>
+    <div class="okr-right colorful" color="blue">
+      <div class="labels">
+        <span class="status label">正常</span>
+        <span class="status percent">0%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:0%;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="okr-item kr" id="okr-kr3">
+    <div class="okr-left">
+      <span class="title">KR3</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">面渣逆袭 Java 基础篇 7-16</span>
+      <div class="note"></div>
+    </div>
+    <div class="okr-right colorful" color="green">
+      <div class="labels">
+        <span class="status label">已完成</span>
+        <span class="status percent">100%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:100%;"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="okr-item kr" id="okr-kr4">
+    <div class="okr-left">
+      <span class="title">KR4</span>
+    </div>
+    <div class="okr-center">
+      <span class="title">伙伴匹配项目</span>
+      <div class="note"></div>
+    </div>
+    <div class="okr-right colorful" color="blue">
+      <div class="labels">
+        <span class="status label">正常</span>
+        <span class="status percent">0%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" style="width:0%;"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<hr>
+<h1 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h1><h2 id="数组、字符串、面向对象编程"><a href="#数组、字符串、面向对象编程" class="headerlink" title="数组、字符串、面向对象编程"></a>数组、字符串、面向对象编程</h2><hr>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="数组与-List"><a href="#数组与-List" class="headerlink" title="数组与 List"></a>数组与 List</h4><p>主要是通过 Arrays 的 asList 方法实现数组转成 List</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] nums = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="comment">// 这样的写法是不行的，因为 nums 是 int[] 而这里需要的是 Integer</span></span><br><span class="line">List&lt;Integer&gt; list = Arrays.asList(nums); </span><br><span class="line"><span class="comment">// 应该这样写，先将 nums 数组转成 int 流，然后装箱，最后将流中的元素加入集合</span></span><br><span class="line">List&lt;Integer&gt; list = Arrays.stream(nums).boxed().collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+<p>这里还有一个需要注意的，asList 返回的不是 java.utils.ArrayList 而是 Arrays 的一个内部类，所以不支持 add remove，是一个固定大小的列表。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] str = <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;bbb&quot;</span>, <span class="string">&quot;ccc&quot;</span>&#125;;</span><br><span class="line"><span class="comment">// 这个操作就会提示 UnsupportedOperationException</span></span><br><span class="line">List&lt;String&gt; stringList = Arrays.asList(str);</span><br><span class="line"><span class="comment">// 这样就行了</span></span><br><span class="line">List&lt;String&gt; stringList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(Arrays.asList(str));</span><br><span class="line">stringList.add(<span class="string">&quot;ddd&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组的排序与查找"><a href="#数组的排序与查找" class="headerlink" title="数组的排序与查找"></a>数组的排序与查找</h4><p>排序使用的是 Arrays 的 sort 方法，这里举两个例子</p>
+<p>第一种是对于基本数据类型的排序</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] nums = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>&#125;;</span><br><span class="line">System.out.println(<span class="string">&quot;排序前: &quot;</span> + Arrays.toString(nums));</span><br><span class="line">Arrays.sort(nums);</span><br><span class="line">System.out.println(<span class="string">&quot;排序后: &quot;</span> + Arrays.toString(nums));</span><br><span class="line"></span><br><span class="line">排序前: [<span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>]</span><br><span class="line">排序后: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+
+<p>第二种是实现了 Comparable 接口的对象按照 <code>compareTo()</code> 的排序</p>
+<p>这里我们拿 String 举例，String 类已经实现了按字典序排序的 Comparable 接口。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] strings = <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;a&quot;</span>, <span class="string">&quot;e&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;d&quot;</span>&#125;;</span><br><span class="line">System.out.println(<span class="string">&quot;排序前: &quot;</span> + Arrays.toString(strings));</span><br><span class="line">Arrays.sort(strings, Comparator.comparing(String::toString).reversed());</span><br><span class="line">System.out.println(<span class="string">&quot;排序后: &quot;</span> + Arrays.toString(strings));</span><br><span class="line"></span><br><span class="line">排序前: [a, e, c, b, d]</span><br><span class="line">排序后: [e, d, c, b, a]</span><br></pre></td></tr></table></figure>
+
+<p>这里额外提一嘴 sort 同样可以对自定义的对象进行排序</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Student&gt; students = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">students.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Alice&quot;</span>, <span class="number">20</span>));</span><br><span class="line">students.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Bob&quot;</span>, <span class="number">18</span>));</span><br><span class="line">students.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Charlie&quot;</span>, <span class="number">22</span>));</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;排序前: &quot;</span> + students);</span><br><span class="line">students.sort(Comparator.comparingInt(Student::getAge).reversed());</span><br><span class="line">System.out.println(<span class="string">&quot;排序后: &quot;</span> + students);</span><br><span class="line"></span><br><span class="line">排序前: [Alice(<span class="number">20</span>), Bob(<span class="number">18</span>), Charlie(<span class="number">22</span>)]</span><br><span class="line">排序后: [Charlie(<span class="number">22</span>), Alice(<span class="number">20</span>), Bob(<span class="number">18</span>)]</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组的复制"><a href="#数组的复制" class="headerlink" title="数组的复制"></a>数组的复制</h4><p>推荐使用 <code>System.arraycopy</code> 这个是一个 native 方法，性能要高很多。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] nums1 = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] nums2 = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;</span><br><span class="line"><span class="type">int</span> <span class="variable">totalLength</span> <span class="operator">=</span> nums1.length + nums2.length;</span><br><span class="line"><span class="type">int</span>[] mergeNums = <span class="keyword">new</span> <span class="title class_">int</span>[totalLength];</span><br><span class="line">System.arraycopy(nums1, <span class="number">0</span> , mergeNums, <span class="number">0</span>, nums1.length);</span><br><span class="line">System.out.println(<span class="string">&quot;复制后的数组: &quot;</span> + Arrays.toString(mergeNums));</span><br><span class="line">System.arraycopy(nums2, <span class="number">0</span> , mergeNums, nums1.length, nums2.length);</span><br><span class="line">System.out.println(<span class="string">&quot;复制后的数组: &quot;</span> + Arrays.toString(mergeNums));</span><br><span class="line"></span><br><span class="line">复制后的数组: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">复制后的数组: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组越界"><a href="#数组越界" class="headerlink" title="数组越界"></a>数组越界</h4><p>操作数组时会遇到的一个问题，注意索引的范围就能避免这个问题出现。</p>
+<hr>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>二维数组经典例题 ，打印杨辉三角</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> scanner.nextInt();</span><br><span class="line"><span class="type">int</span>[][] nums = <span class="keyword">new</span> <span class="title class_">int</span>[n][n];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        nums[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">        nums[i][j] = nums[i - <span class="number">1</span>][j] + nums[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printNums(nums, n);</span><br><span class="line"></span><br><span class="line"><span class="number">1</span> </span><br><span class="line"><span class="number">1</span> <span class="number">1</span> </span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">1</span> </span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">3</span> <span class="number">1</span> </span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">6</span> <span class="number">4</span> <span class="number">1</span> </span><br><span class="line"><span class="number">1</span> <span class="number">5</span> <span class="number">10</span> <span class="number">10</span> <span class="number">5</span> <span class="number">1</span> </span><br><span class="line"><span class="number">1</span> <span class="number">6</span> <span class="number">15</span> <span class="number">20</span> <span class="number">15</span> <span class="number">6</span> <span class="number">1</span> </span><br></pre></td></tr></table></figure>
+
+<h4 id="数组打印"><a href="#数组打印" class="headerlink" title="数组打印"></a>数组打印</h4><p>第一种 最基础的 使用 for 循环打印</p>
+<p>第二种 使用 stream 流 打印</p>
+<p>第三种 调用 Arrays 工具类的 toString 方法打印</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// stream 流 打印数组</span></span><br><span class="line"><span class="type">int</span>[] nums = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">String[] strings = <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;bbb&quot;</span>, <span class="string">&quot;ccc&quot;</span>&#125;;</span><br><span class="line">Arrays.stream(nums).forEach(System.out::println);</span><br><span class="line">Arrays.stream(strings).forEach(System.out::println);</span><br><span class="line">System.out.println(<span class="string">&quot;---&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// for 循环打印 for each</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> num : nums) &#123;</span><br><span class="line">        System.out.println(num);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;---&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Arrays 工具类打印 数组</span></span><br><span class="line">System.out.println(Arrays.toString(nums));</span><br><span class="line">System.out.println(Arrays.toString(strings));</span><br><span class="line"></span><br><span class="line">String[][] deepStrings = <span class="keyword">new</span> <span class="title class_">String</span>[][] &#123;&#123;<span class="string">&quot;aaa&quot;</span>,<span class="string">&quot;bbb&quot;</span>,<span class="string">&quot;ccc&quot;</span>&#125;,&#123;<span class="string">&quot;ddd&quot;</span>,<span class="string">&quot;eee&quot;</span>,<span class="string">&quot;fff&quot;</span>&#125;&#125;;</span><br><span class="line">System.out.println(Arrays.deepToString(deepStrings));</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line">aaa</span><br><span class="line">bbb</span><br><span class="line">ccc</span><br><span class="line">---</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line">---</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">[aaa, bbb, ccc]</span><br><span class="line">[[aaa, bbb, ccc], [ddd, eee, fff]]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="简单理解-String-类"><a href="#简单理解-String-类" class="headerlink" title="简单理解 String 类"></a>简单理解 String 类</h4><ol>
+<li>String 类 是 final，不可以被继承</li>
+<li>String 类实现了 Serializable 接口，可以被序列化</li>
+<li>String 类实现了 Comparable 接口，应该使用 compareTo 方法进行比较</li>
+<li>String 类是不可变的，字符串拼接应该考虑 StringBuffer 和 StringBuilder</li>
+</ol>
+<p>补充一个知识：在 Java 9 之后 String 数组改用 byte 数组实现（之前是 char 数组），主要是为了优化 String 的占用。</p>
+<h4 id="String-类的-方法"><a href="#String-类的-方法" class="headerlink" title="String 类的 方法"></a>String 类的 方法</h4><ol>
+<li><p>hashCode：String 很适合当 HashMap 的键值</p>
+</li>
+<li><p>substring：常用的字符串截取方法</p>
+</li>
+<li><p>spilt：按照符号对字符串进行切割</p>
+</li>
+<li><p>indexOf：用于查找子字符串在原字符串中第一次出现的位置，并返回索引</p>
+</li>
+<li><p>length：返回字符串长度</p>
+</li>
+<li><p>isEmpty：判断是否为空</p>
+</li>
+<li><p>charAt：返回指定索引处的字符</p>
+</li>
+<li><p>valueOf：将其他类型的数据转换成字符串</p>
+</li>
+<li><p>getChars: 将字符串复制到字符数组</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> <span class="string">&quot;test&quot;</span>;</span><br><span class="line"><span class="type">char</span>[] chars = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">4</span>];</span><br><span class="line">text.getChars(<span class="number">0</span>,text.length(),chars,<span class="number">0</span>);</span><br><span class="line">System.out.println(Arrays.toString(chars));</span><br><span class="line"></span><br><span class="line">[t, e, s, t]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>getBytes: 返回字符串的字节数组</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> <span class="string">&quot;test&quot;</span>;</span><br><span class="line">System.out.println(Arrays.toString(text.getBytes(StandardCharsets.UTF_8)));</span><br><span class="line"></span><br><span class="line">[<span class="number">116</span>, <span class="number">101</span>, <span class="number">115</span>, <span class="number">116</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>trim：去除字符串两端的空白字符</p>
+</li>
+<li><p>toCharArray：将字符串转换成字符数组</p>
+</li>
+</ol>
+<h4 id="字符串为什么不可变"><a href="#字符串为什么不可变" class="headerlink" title="字符串为什么不可变"></a>字符串为什么不可变</h4><ol>
+<li>String 被 final 修饰，说明没有子类去重写它的方法</li>
+<li>String 存在 char 数组中，char 数组也是被 final 修饰，同样的 Java 9 之后使用的 Byte 数组也是同理。</li>
+</ol>
+<h4 id="字符串不可变的好处"><a href="#字符串不可变的好处" class="headerlink" title="字符串不可变的好处"></a>字符串不可变的好处</h4><ol>
+<li>保证 String 对象的安全性，避免被篡改</li>
+<li>保证哈希值不会频繁变更，因为 String 类经常会作为哈希表的键值，如果哈希值经常变动，哈希表的性能也会下降。</li>
+<li>可以实现字符串常量池，这样具有相同内容的字符串变量就可以指向同一个字符串对象，节省内存空间。</li>
+</ol>
+<h4 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;test&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>首先这一个语句，其实是创建了两个对象。</p>
+<p>Java 的逻辑是这样的，首先去字符串常量池看有没有<code> test</code>这个字符串对象，如果有，就不会在常量池创建这个对象，则是在堆里创建一个对象，然后把地址返回给<code>text</code>。如果没有，则在常量池中创建这个对象，然后继续执行刚才的操作。</p>
+<p>所以我们一般创建字符串的时候不使用 new</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> <span class="string">&quot;test&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这样就利用到了 Java 的字符串常量池，如果在常量池中存在这个字符串，就会直接返回这个对象的地址给<code>text</code>，不会额外的在堆上创建一个对象。</p>
+<p>补充：字符串常量池在内存的什么位置？</p>
+<p>Java 7 之前是在永久代的内存区域中，永久代是 Java 堆的一部分，主要是用来存类信息，方法信息，常量池信息这些静态数据。</p>
+<p>Java 7 把常量池从永久代中拿了出来，放在了堆里面。</p>
+<p>Java 8 之后取消了大小固定的永久代，用元空间替换了它。</p>
+<h4 id="String-intern-详解"><a href="#String-intern-详解" class="headerlink" title="String.intern 详解"></a>String.intern 详解</h4><p>用两段代码来解释会很清晰</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span> (<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">str2</span> <span class="operator">=</span> str1.intern();</span><br><span class="line">System.out.println(str1 == str2);</span><br><span class="line"></span><br><span class="line"><span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>这段代码的第一行首先在常量池和堆里各创建了一个对象<code>aaa</code>，str1 引用的是堆中的<code>aaa</code></p>
+<p>第二行代码执行的时候会从常量池找<code>aaa</code>这个对象，找到之后返回给 str2 的是常量池中对象的地址。</p>
+<p>所以这两个不是同一个对象。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;aaa&quot;</span>) + <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;bbb&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">str2</span> <span class="operator">=</span> str1.intern();</span><br><span class="line">System.out.println(str1 == str2);</span><br><span class="line"></span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>这段代码的第一行，在常量池中创建两个变量，<code>aaa</code> 和 <code>bbb</code>，然后在堆上同样创建这两个变量。接着会创建一个 StringBuilder 对象，把<code>aaabbb</code>这个对象存在堆上。</p>
+<p>第二行代码无法从常量池中找到<code>aaabbb</code>，但是堆上已经创建了，此时就会在常量池保存一个堆上该对象的引用，返回堆上的这个对象的地址给 str2</p>
+<p>所以 str1 和 str2 是同一个对象。</p>
+<h4 id="StringBuilder-和-StringBuffer"><a href="#StringBuilder-和-StringBuffer" class="headerlink" title="StringBuilder 和 StringBuffer"></a>StringBuilder 和 StringBuffer</h4><p>两者的区别：StringBuffer 是线程安全的。StringBuilder 相反，是为了忽略线程安全为了性能创建出来的。</p>
+<p>其余情况两者完全相同。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;aaa&quot;</span>) + <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;bbb&quot;</span>);</span><br><span class="line"><span class="comment">// 上面的代码实际上是这样实现的</span></span><br><span class="line"><span class="type">String</span> <span class="variable">str1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>().append(<span class="string">&quot;aaa&quot;</span>).append(<span class="string">&quot;bbb&quot;</span>).toString();</span><br><span class="line"><span class="comment">// 最后简写为</span></span><br><span class="line"><span class="type">String</span> <span class="variable">str1</span> <span class="operator">=</span> <span class="string">&quot;aaa&quot;</span> + <span class="string">&quot;bbb&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="判断字符串相等"><a href="#判断字符串相等" class="headerlink" title="判断字符串相等"></a>判断字符串相等</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;aaa&quot;</span>).equals(<span class="string">&quot;aaa&quot;</span>)); <span class="comment">// true</span></span><br><span class="line">System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;aaa&quot;</span>) == <span class="string">&quot;aaa&quot;</span>); <span class="comment">// false</span></span><br><span class="line">System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;aaa&quot;</span>) == <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;aaa&quot;</span>)); <span class="comment">// false</span></span><br><span class="line">System.out.println(<span class="string">&quot;aaa&quot;</span> == <span class="string">&quot;aaa&quot;</span>); <span class="comment">// true</span></span><br><span class="line">System.out.println(<span class="string">&quot;aaa&quot;</span> == <span class="string">&quot;a&quot;</span> + <span class="string">&quot;aa&quot;</span>); <span class="comment">// true</span></span><br><span class="line">System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;aaa&quot;</span>).intern() == <span class="string">&quot;aaa&quot;</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>equals 比较的是内容 true</li>
+<li>前者是在堆上的对象地址，后者是在常量池的内存地址 false</li>
+<li>两个都是 new 在堆上的不同对象，一定是 false</li>
+<li>两个都是常量池里的对象 true</li>
+<li>a + aa 会优化成 aaa 此时两者都在常量池 true</li>
+<li>前者创建了两个对象，但是最后使用了 intern 去常量池找相关对象，所以与后者同在常量池 true</li>
+</ol>
+<p>补充 1：可以使用 <code>Object.equals()</code> 这样不需要判空</p>
+<p>补充 2：String 类之间可以使用<code>.contentEquals()</code> 可以将字符串和任何的字符序列进行比较（StringBuffer、StringBuilder）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;aaa&quot;</span>;</span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">s2.append(<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line">System.out.println(s1.contentEquals(s2));</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串的拼接"><a href="#字符串的拼接" class="headerlink" title="字符串的拼接"></a>字符串的拼接</h4><ol>
+<li><p>在循环体内，拼接字符串最好使用 StringBuilder 的 append 方法，因为使用 + 号进行拼接会产生大量的 StringBuilder 对象，占用了更多的内存空间。</p>
+</li>
+<li><p>concat 也可以进行拼接，只不过他在拼接字符串为 null 的时候，会抛出 NullPointerException</p>
+</li>
+<li><p>join 也可以进行拼接，这个方法的第一个参数是字符串的连接符。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> String.join(<span class="string">&quot;-&quot;</span>, <span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;bbb&quot;</span>, <span class="string">&quot;ccc&quot;</span>);</span><br><span class="line">System.out.println(s1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还有一个 <code>StringUtils.join()</code></p>
+</li>
+</ol>
+<h4 id="字符串的拆分"><a href="#字符串的拆分" class="headerlink" title="字符串的拆分"></a>字符串的拆分</h4><p>这里主要是将 spilt 和正则表达式结合起来使用</p>
+<p>对于简单的字符串拆分依然使用 spilt</p>
+<p>对于稍微复杂的字符串可以使用 Pattern 类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;aaaa,bbbbb&quot;</span>;</span><br><span class="line"><span class="comment">// 这里就是使用正则表达式进行拆分的依据，可以设置多个拆分规则</span></span><br><span class="line"><span class="type">Pattern</span> <span class="variable">pattern</span> <span class="operator">=</span> Pattern.compile(<span class="string">&quot;[,]&quot;</span>);</span><br><span class="line"></span><br><span class="line">String[] parts = pattern.split(s1);</span><br><span class="line">System.out.println(<span class="string">&quot;第一部分: &quot;</span> + parts[<span class="number">0</span>] + <span class="string">&quot; &quot;</span> + <span class="string">&quot;第二部分： &quot;</span> + parts[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">第一部分: aaaa 第二部分： bbbbb</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="LeetCode-Top100"><a href="#LeetCode-Top100" class="headerlink" title="LeetCode Top100"></a>LeetCode Top100</h2><h2 id="面渣逆袭"><a href="#面渣逆袭" class="headerlink" title="面渣逆袭"></a>面渣逆袭</h2><h3 id="7-Java-有哪些数据类型"><a href="#7-Java-有哪些数据类型" class="headerlink" title="7. Java 有哪些数据类型"></a>7. Java 有哪些数据类型</h3><h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><ol>
+<li>int</li>
+<li>short</li>
+<li>long</li>
+<li>byte</li>
+<li>char</li>
+<li>boolean</li>
+<li>float</li>
+<li>double</li>
+</ol>
+<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><ol>
+<li>数组</li>
+<li>类</li>
+<li>接口</li>
+</ol>
+<h4 id="补充1：-Integer-最大值-1，会发生什么"><a href="#补充1：-Integer-最大值-1，会发生什么" class="headerlink" title="补充1： Integer 最大值+1，会发生什么"></a>补充1： Integer 最大值+1，会发生什么</h4><p>会变成 Integer 的最小值，因为 Java 的整数类型使用的是二进制补码表示法，Integer 的最大值是 0111······ 加一就变成了 1000·····，补码的第一位表示的是符号，所以说就变成了 Integer 的最小值。</p>
+<h4 id="补充2：-boolean-实际占用几个字节"><a href="#补充2：-boolean-实际占用几个字节" class="headerlink" title="补充2： boolean 实际占用几个字节"></a>补充2： boolean 实际占用几个字节</h4><p>使用 JOL 工具查看 单独的 boolean 类型或者 boolean 数组，都是 1 个字节。</p>
+<h3 id="8-自动类型转换和强制类型转换"><a href="#8-自动类型转换和强制类型转换" class="headerlink" title="8. 自动类型转换和强制类型转换"></a>8. 自动类型转换和强制类型转换</h3><p>首先记住的是这个转换规则（自动类型转换）：小转大</p>
+<p>byte -&gt; short -&gt; int -&gt; long -&gt; float -&gt; double</p>
+<p>char -&gt; int</p>
+<h3 id="9-什么是自动拆箱和装箱"><a href="#9-什么是自动拆箱和装箱" class="headerlink" title="9. 什么是自动拆箱和装箱"></a>9. 什么是自动拆箱和装箱</h3><p>拆箱就是将包装类转换成基本数据类型</p>
+<p>装箱就是将基本数据类型转换成包装类</p>
+<p>比如说 <code>Integer i = 10;</code> 这里的 i 就是包装类的一个变量。</p>
+<h3 id="10-和-的区别"><a href="#10-和-的区别" class="headerlink" title="10. &amp; 和 &amp;&amp; 的区别"></a>10. &amp; 和 &amp;&amp; 的区别</h3><p>&amp; 是逻辑与运算</p>
+<p>&amp;&amp; 是短路与运算，比如说 条件a &amp;&amp; 条件b，如果条件a 是 false，那么条件 b 不会执行判断。</p>
+<p>虽然两个都要求左右两边的表达式为 true，总体才能 true，但是短路与会使右边的条件不执行。</p>
+<p>比如说 username !&#x3D; null &amp;&amp; username.equals(“”) ，反过来写就会导致空指针异常</p>
+<h3 id="11-switch-语句能否用到byte、long、String上"><a href="#11-switch-语句能否用到byte、long、String上" class="headerlink" title="11. switch 语句能否用到byte、long、String上"></a>11. switch 语句能否用到byte、long、String上</h3><p>这个看 Java 的版本 </p>
+<p>Java 5 之前只能用于 byte、short、char、int 上</p>
+<p>Java 5 新增了枚举 enum</p>
+<p>Java 7 可以用于字符串</p>
+<p>Java 21 可以用于任意类型，甚至可以添加 when 子句进行复杂判断</p>
+<h3 id="12-break-continue-return-的区别"><a href="#12-break-continue-return-的区别" class="headerlink" title="12. break continue return 的区别"></a>12. break continue return 的区别</h3><p>break：用于循环语句中，主要是中断此次循环并跳出循环</p>
+<p>continue：用于循环语句中，主要是跳过此次循环，进行下一次循环</p>
+<p>return：直接结束当前的方法，不再执行</p>
+<h3 id="13-用效率最高的方法计算2-8"><a href="#13-用效率最高的方法计算2-8" class="headerlink" title="13. 用效率最高的方法计算2 * 8"></a>13. 用效率最高的方法计算2 * 8</h3><p>位运算 2 &gt;&gt; 3 相当于乘 2 的三次方</p>
+<h3 id="14-说说自增自减运算"><a href="#14-说说自增自减运算" class="headerlink" title="14. 说说自增自减运算"></a>14. 说说自增自减运算</h3><p>这里主要是看两种情况，第一种是 i++&#x2F;i– 这种情况下变量先参与运算，运算结束后再进行自增自减</p>
+<p>第二种 ++i&#x2F;–i 这种情况就是变量先进行自增自减，然后参与运算。</p>
+<h3 id="15-float是如何表示小数的"><a href="#15-float是如何表示小数的" class="headerlink" title="15. float是如何表示小数的"></a>15. float是如何表示小数的</h3><p>二进制浮点数格式，分为三个部分，符号位，指数部分，尾数部分</p>
+<p>比如说 25.125</p>
+<p>整数部分用二进制表示 11001，小数部分用二进制表示 0.001 合并之后是 11001.001 然后小数点左移 1.1001001 * 2⁴</p>
+<ol>
+<li>符号为 正 &#x3D; 0</li>
+<li>指数部分 实际要加上 127 所以 4+127&#x3D;131 二进制 10000011</li>
+<li>尾数部分，去掉整数部分的 1，保留小数部分 1001001 补 0 到 23 位</li>
+</ol>
+<p>最后组合起来 0 | 10000011 | 10010010000000000000000</p>
+<p>验证一下</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../img/沉淀计划Day2/image-20251224150734909.png" data-src="../../img/沉淀计划Day2/image-20251224150734909.png" alt="image-20251224150734909" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">image-20251224150734909</span></div></div>
+
+<h3 id="16-讲一下数据准确性高如何保证"><a href="#16-讲一下数据准确性高如何保证" class="headerlink" title="16. 讲一下数据准确性高如何保证"></a>16. 讲一下数据准确性高如何保证</h3><p>在金融行业，肯定不能用 float 和 double 来保存小数，一般使用的是 Bigdecimal，比如说 1.99 元，可以表示为 199 分。</p>
+<hr>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="../../assets/user/about_me.jpg" data-src="../../assets/user/about_me.jpg" alt="关于我" data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div><div class="image-meta"><span class="image-caption center">关于我</span></div></div>
+
+<div class="tag-plugin ds-rating" data-api="https://star-vote-neon.vercel.app/api/rating" data-api="https://star-vote-neon.vercel.app/api/rating" data-id="daily_study_2"><div class="header"><span>给文章评个分吧！</span></div><div class="body"><button class="star" data-value="1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="3"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><button class="star" data-value="5"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><!-- Icon from Fluent UI System Color Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><g fill="none"><path fill="url(#fluentColorStar480)" d="M21.803 6.086c.899-1.821 3.495-1.821 4.394 0l4.852 9.832l10.85 1.576c2.01.293 2.813 2.762 1.358 4.18l-7.85 7.653l1.853 10.806c.343 2.001-1.758 3.528-3.555 2.583L24 37.614l-9.705 5.102c-1.797.945-3.898-.582-3.555-2.583l1.854-10.806l-7.851-7.654c-1.455-1.417-.652-3.886 1.357-4.178l10.85-1.577z"/><defs><linearGradient id="fluentColorStar480" x1="43.995" x2="2.879" y1="43.856" y2="5.054" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6F47"/><stop offset="1" stop-color="#FFCD0F"/></linearGradient></defs></g></svg></button><span class="avg">(0.0)</span></div><div class="footer"><span class="count">0</span><span class="suffix">人已评分</span></div></div>
+</article>
+<div class="article-footer">
+    <section id="references">
+      <div class="header"><span>参考资料</span></div>
+      <div class="body">
+        <ul>
+        <li class="post-title">
+          <p><a href="https://blog.上杉九月.cn/">九月的生活</a></p>
+
+        </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+
+    <section id="share">
+      <div class="header"><span>分享文章</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://blog.上杉九月.cn/posts/daily_study_2/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" /></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://blog.上杉九月.cn/posts/daily_study_2/&title=沉淀计划 Day2 - 九月的生活&pics=../../img/沉淀计划Day1/学习笔记-春招冲刺.png&summary=记录一下春招前我的学习内容"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=沉淀计划 Day2 - 九月的生活&amp;body=https://blog.上杉九月.cn/posts/daily_study_2/"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+        
+        <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://blog.上杉九月.cn/posts/daily_study_2/"/>
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/posts/daily_study_3/">沉淀计划 Day3</a></div></section></div>
+
+<div class="related-wrap" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="/posts/daily_study_1/" title="沉淀计划 Day1"><span class="title">沉淀计划 Day1</span><span class="excerpt">记录一下春招前我的学习内容</span></a><a class="item" href="/posts/daily_study_3/" title="沉淀计划 Day3"><span class="title">沉淀计划 Day3</span><span class="excerpt">记录一下春招前我的学习内容</span></a></div></section></div>
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><div style="text-align: center;">
+  本站由 <a target="_blank" rel="noopener" href="https://sakurasep.site">上杉九月</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar 1.26.8</a> 主题创建。<br>
+  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span><br>
+  <script async src="/assets/js/busuanzi.js"></script>
+  <a href="https://icp.gov.moe/?keyword=20240797" target="_blank">萌ICP备20240797号</a><br>
+  本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。
+</div>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="toc-text">数组、字符串、面向对象编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%8E-List"><span class="toc-text">数组与 List</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%9F%A5%E6%89%BE"><span class="toc-text">数组的排序与查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%A4%8D%E5%88%B6"><span class="toc-text">数组的复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%B6%8A%E7%95%8C"><span class="toc-text">数组越界</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">二维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%89%93%E5%8D%B0"><span class="toc-text">数组打印</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3-String-%E7%B1%BB"><span class="toc-text">简单理解 String 类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String-%E7%B1%BB%E7%9A%84-%E6%96%B9%E6%B3%95"><span class="toc-text">String 类的 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8F%AF%E5%8F%98"><span class="toc-text">字符串为什么不可变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-text">字符串不可变的好处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="toc-text">字符串常量池</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String-intern-%E8%AF%A6%E8%A7%A3"><span class="toc-text">String.intern 详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#StringBuilder-%E5%92%8C-StringBuffer"><span class="toc-text">StringBuilder 和 StringBuffer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E7%AD%89"><span class="toc-text">判断字符串相等</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8B%BC%E6%8E%A5"><span class="toc-text">字符串的拼接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8B%86%E5%88%86"><span class="toc-text">字符串的拆分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LeetCode-Top100"><span class="toc-text">LeetCode Top100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E6%B8%A3%E9%80%86%E8%A2%AD"><span class="toc-text">面渣逆袭</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Java-%E6%9C%89%E5%93%AA%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">7. Java 有哪些数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%851%EF%BC%9A-Integer-%E6%9C%80%E5%A4%A7%E5%80%BC-1%EF%BC%8C%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88"><span class="toc-text">补充1： Integer 最大值+1，会发生什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%852%EF%BC%9A-boolean-%E5%AE%9E%E9%99%85%E5%8D%A0%E7%94%A8%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82"><span class="toc-text">补充2： boolean 实际占用几个字节</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">8. 自动类型转换和强制类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E6%8B%86%E7%AE%B1%E5%92%8C%E8%A3%85%E7%AE%B1"><span class="toc-text">9. 什么是自动拆箱和装箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">10. &amp; 和 &amp;&amp; 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-switch-%E8%AF%AD%E5%8F%A5%E8%83%BD%E5%90%A6%E7%94%A8%E5%88%B0byte%E3%80%81long%E3%80%81String%E4%B8%8A"><span class="toc-text">11. switch 语句能否用到byte、long、String上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-break-continue-return-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">12. break continue return 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E7%94%A8%E6%95%88%E7%8E%87%E6%9C%80%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%972-8"><span class="toc-text">13. 用效率最高的方法计算2 * 8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E8%AF%B4%E8%AF%B4%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-text">14. 说说自增自减运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-float%E6%98%AF%E5%A6%82%E4%BD%95%E8%A1%A8%E7%A4%BA%E5%B0%8F%E6%95%B0%E7%9A%84"><span class="toc-text">15. float是如何表示小数的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E8%AE%B2%E4%B8%80%E4%B8%8B%E6%95%B0%E6%8D%AE%E5%87%86%E7%A1%AE%E6%80%A7%E9%AB%98%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81"><span class="toc-text">16. 讲一下数据准确性高如何保证</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js","envId":"https://twikoo.sakurasep.top"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":"https://site-info-api-git-main-sakurasep.vercel.app/api/v1?url={href}"},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote-neon.vercel.app/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote-neon.vercel.app/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+
+  <script defer src="https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js"></script>
+  <script defer>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new ChucklePostAI(Object.assign({
+        el: 'article.content',
+        css: `/css/_plugins/tianli_gpt`
+      }, JSON.parse(`{"enable":true,"js":"https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js","field":"post","key":"f293e3bdd87443869bb9","total_length":1000,"typewriter":true,"summary_directly":true,"rec_method":"all","hide_shuttle":true,"summary_toggle":false,"interface":{"name":"AI摘要","introduce":"我是文章辅助AI: QX-AI，点击下方的按钮，让我生成本文简介、推荐相关文章等。","version":"TianliGPT","button":["介绍自己","推荐文章","生成摘要","矩阵穿梭"]}}`)))
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
